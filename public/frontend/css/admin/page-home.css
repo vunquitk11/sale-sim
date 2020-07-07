@@ -1,0 +1,78 @@
+.video-name {
+    margin-left: 1rem;
+    font-weight: 600;
+}
+
+.slick_demo_2 {
+    height: 30rem;
+}
+
+.text-center {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: #204F6F !important;
+}
+
+/* .slick-slide{
+    width: 300px!important;
+} */
+
+.slick-slide .ibox-content {
+    position: relative;
+}
+
+.slick-slide .ibox-content:hover .delete-image-from-slide {
+    display: block;
+}
+
+.slick-slide .hover-blur:hover :not(.delete-image-from-slide ) {
+    filter: blur(5px);
+}
+
+.slick-slide .delete-image-from-slide {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    display: none;
+    cursor: pointer;
+}
+
+.slick-slide .delete-image-from-slide {
+    color: #EA3F34;
+    z-index: 100;
+}
+
+#list-video-info{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.video-item .hover-blur:hover :not(.add-image-to-slide) {
+    filter: blur(5px);
+}
+
+.video-item:hover .add-image-to-slide {
+    display: block;
+}
+
+.add-image-to-slide {
+    color: #1e9f75;
+    position: absolute;
+    font-size: 25px;
+    top: 0px;
+    right: 15px;
+    display: none;
+}
+
+.hide-videos {
+    display: none;
+}
+
+.video-item {
+    padding-bottom: 20px;
+    height: 23rem;
+}
