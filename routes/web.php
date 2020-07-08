@@ -28,5 +28,11 @@ Route::group([
         'middleware' => 'admin'
     ], function () {
         Route::get('/','PageAdminController@pageAdminDashboard');
+        //brand
+        Route::get('/brands','PageAdminController@pageBrands');
+        Route::get('/create-brand','PageAdminController@pageCreateBrand');
+        Route::get('/update-brand/{id}','PageAdminController@pageUpdateBrand');
+        Route::post('/create-brand','AdminController@postCreateBrand');
+        Route::post('/update-brand/{id}','AdminController@postUpdateBrand');
     });
 });

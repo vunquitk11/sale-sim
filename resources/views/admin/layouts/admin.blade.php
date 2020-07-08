@@ -14,16 +14,16 @@
     <meta property="og:description"        content="Admin Dashboard for ShopSim98" />
     {{-- <meta property="og:image"              content="https://s3.ap-southeast-1.amazonaws.com/yamlive/28d64a089602a3537.jpg" /> --}}
 
-    <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+    <link href="{{asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{asset('frontend/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
     <link rel="icon" href="{{asset('public/images/favicon.png')}}">
     <!-- Toastr style -->
-    <link href="{{ asset('frontend/css/plugins/toastr/toastr.min.css') }}" rel="stylesheet">
+    <link href="{{asset('frontend/css/plugins/toastr/toastr.min.css') }}" rel="stylesheet">
 
-    <link href="{{ asset('frontend/css/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend/css/custom.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend/css/admin/main.css') }}" rel="stylesheet">
+    <link href="{{asset('frontend/css/animate.css') }}" rel="stylesheet">
+    <link href="{{asset('frontend/css/style.css') }}" rel="stylesheet">
+    <link href="{{asset('frontend/css/custom.css') }}" rel="stylesheet">
+    <link href="{{asset('frontend/css/admin/main.css') }}" rel="stylesheet">
     <meta property="og:image" content="https://yt3.ggpht.com/a-/ACSszfG6SiS4096AdxOv4vjhBXJphsGQuBWBBwkLww=s900-mo-c-c0xffffffff-rj-k-no" />
     <meta property="og:image:secure_url" content="https://yt3.ggpht.com/a-/ACSszfG6SiS4096AdxOv4vjhBXJphsGQuBWBBwkLww=s900-mo-c-c0xffffffff-rj-k-no" />
 
@@ -40,14 +40,13 @@
                     <li class="nav-header">
                         <div class="dropdown profile-element">
                             <span>
-                                <img alt="image" class="img-circle" src="{{Auth::user()->ava_src ? Auth::user()->ava_src : '/frontend/img/user-profile.png'}}" style="width: 70px;" />
+                                <img alt="image" class="img-circle" src="{{Auth::user()->image ? Auth::user()->image : ''}}" style="width: 70px;" />
                             </span>
                             <span class="block m-t-xs"> <strong class="font-bold" id="admin-name">{{Auth::user()->name}}
                                 <a href="/admin/logout"><i style="color:#E97258;cursor: pointer;" class="fa fa-power-off" aria-hidden="true"></i></a>
                             </strong></span>
                         </div>
                     </li>
-                    @can('gate-view-ui')
                     <li class="{{($url == 'page-home') ? 'active' : ''}}  toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Video">
                         <a><i class="fa fa-picture-o" aria-hidden="true"></i><span class="nav-label ul-header">Giao diện</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
@@ -57,8 +56,6 @@
                             <li class="{{($url == 'page-info-recharge') ? 'active' : ''}}"><a href="/admin/page-info-recharge" id="" >Thông tin nạp tiền</a></li>
                         </ul>
                     </li>
-                    @endcan
-                    @can('gate-view-user')
                     <li class="{{($url == 'users' || $url == 'create-user' || $url == 'edit-user' || $url == 'analytics-artist') ? 'active' : ''}}  toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Video">
                         <a><i class="fa fa-user ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">User</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
@@ -69,7 +66,6 @@
                             @endcan
                         </ul>
                     </li>
-                    @endcan
                     <li class="{{($url == 'role-user' || $url == 'role-group' || $url == 'role-permission') ? 'active' : ''}}  toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Video">
                         <a><i class="fa fa-users ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Role</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
@@ -88,7 +84,6 @@
                             <li><a href="/admin/logs">System log</a></li>
                         </ul>
                     </li>
-                    @can('gate-view-video')
                     <li class="{{($url == 'videos' || $url == 'create-video' || $url == 'analytics-video' || $url == 'edit-video' || $url == 'video-waiting') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Video">
                         <a><i class="fa fa-video-camera ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Video</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
@@ -104,8 +99,6 @@
                             @endcan
                         </ul>
                     </li>
-                    @endcan
-                    @can('gate-view-event')
                     <li class="{{($url == 'events' || $url == 'info-event'|| $url == 'create-event' || $url == 'edit-event' || $url == 'event-waiting') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa event">
                         <a><i class="fa fa-calendar" aria-hidden="true"></i> <span class="nav-label ul-header">Event</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
@@ -115,8 +108,6 @@
                             @endcan
                         </ul>
                     </li>
-                    @endcan
-                    @can('gate-view-album')
                     <li class="{{($url == 'albums' || $url == 'info-album'|| $url == 'create-album' || $url == 'edit-album') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Album">
                         <a><i class="fa fa-th-list ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Album</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
@@ -126,10 +117,8 @@
                             @endcan
                         </ul>
                     </li>
-                    @endcan
-                    @can('gate-view-category')
-                    <li class="{{($url == 'categories' || $url == 'create-category') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Video">
-                        <a><i class="fa fa-folder-open ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Video Category</span><span class="fa fa-caret-down"></span></a>
+                    <li class="{{($url == 'categories' || $url == 'create-category') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Category">
+                        <a><i class="fa fa-folder-open ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Category</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li class="{{($url == 'categories') ? 'active' : ''}}"><a href="/admin/categories" id="admin-list-category">Danh sách category</a></li>
                             @can('gate-create-category')
@@ -137,23 +126,13 @@
                             @endcan
                         </ul>
                     </li>
-                    @endcan
-                    @can('gate-view-achievement')
-                    <li class="{{($url == 'achievements' || $url == 'create-achievement') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Video">
-                        <a><i class="fa fa-trophy ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Achievement</span><span class="fa fa-caret-down"></span></a>
+                    <li class="{{($url == 'brands' || $url == 'create-brand') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa brand">
+                        <a><i class="fa fa-phone-square ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Nhà mạng</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li class="{{($url == 'achievements') ? 'active' : ''}}"><a href="/admin/achievements" id="admin-list-achievement">Danh sách huy hiệu</a></li>
+                            <li class="{{($url == 'brands') ? 'active' : ''}}"><a href="/admin/brands" id="admin-list-brand">Danh sách nhà mạng</a></li>
+                            <li class="{{($url == 'create-brand') ? 'active' : ''}}"><a href="/admin/create-brand">Thêm nhà mạng</a></li>
                         </ul>
                     </li>
-                    @endcan
-                    @can('gate-view-promotion')
-                    <li class="{{($url == 'promotions' || $url == 'create-promotion') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Video">
-                        <a><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> <span class="nav-label ul-header">Promotion</span><span class="fa fa-caret-down"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li class="{{($url == 'promotions') ? 'active' : ''}}"><a href="/admin/promotions" id="admin-list-promotion">Danh sách promotion</a></li>
-                        </ul>
-                    </li>
-                    @endcan
                 </ul>
             </div>
         </nav>
@@ -184,16 +163,16 @@
 
 
     <!-- Mainly scripts -->
-    <script src="{{ asset('frontend/js/jquery-3.1.1.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/plugins/metisMenu/jquery.metisMenu.js') }}"></script>
-    <script src="{{ asset('frontend/js/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
+    <script src="{{asset('frontend/js/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{asset('frontend/js/bootstrap.min.js') }}"></script>
+    <script src="{{asset('frontend/js/plugins/metisMenu/jquery.metisMenu.js') }}"></script>
+    <script src="{{asset('frontend/js/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
 
     <!-- Custom and plugin javascript -->
-    <script src="{{ asset('frontend/js/inspinia.js') }}"></script>
-    <script src="{{ asset('frontend/js/plugins/pace/pace.min.js') }}"></script>
+    <script src="{{asset('frontend/js/inspinia.js') }}"></script>
+    <script src="{{asset('frontend/js/plugins/pace/pace.min.js') }}"></script>
     <!-- Toastr -->
-    <script src="{{ asset('frontend/js/plugins/toastr/toastr.min.js') }}"></script>
+    <script src="{{asset('frontend/js/plugins/toastr/toastr.min.js') }}"></script>
     <script src="{{asset('frontend/js/plugins/chartJs/Chart.min.js')}}"></script>
 
     @yield('script')

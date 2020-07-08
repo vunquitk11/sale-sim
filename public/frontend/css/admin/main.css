@@ -51,22 +51,22 @@ body {
     top: 105px;
 }
 
-.nav > li.active {
+/* .nav > li.active {
     background: #204F6F!important;
     border-left:none;
-}
+} */
 
-.nav-second-level {
+/* .nav-second-level {
     background: #204F6F!important;
-}
+} */
 
 .nav > li.active > a {
     color: #1EB0BB;
 }
 
-.nav > li.active > a .ul-header {
+/* .nav > li.active > a .ul-header {
     color: #1EB0BB;
-}
+} */
 
 .nav > li > a {
     color: white;
@@ -325,7 +325,7 @@ table.dataTable::before {
 }
 
 .table > tbody > tr > td:last-child {
-    text-align: right;
+    /* text-align: right; */
 }
 
 .table > tbody > tr > td p {
