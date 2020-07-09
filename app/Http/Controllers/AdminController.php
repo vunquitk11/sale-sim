@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 //model
 use App\User;
 use App\Brand;
+use App\Category;
 //helper
 use App\Helpers\UploadFile;
 use App\Helpers\AdminHelper;
@@ -54,19 +55,48 @@ class AdminController extends Controller
 
     public function postUpdateBrand($id,Request $request){
         $brand = Brand::find($id);
-        // if(!$brand) return redirect('/admin/brands')->with(['danger' => 'Something was wrong']);
-        // $request->name ? $brand->name = $request->name : '';
-        // $request->status ? $brand->status = $request->status : '';
-        // $request->position ? $brand->position = $request->position : '';
-        // $request->name ? $brand->slug = AdminHelper::createSlug($request->name) : '';
-        // if($request->file('image')){
-            // $brand->image = UploadFile::deleteLocal($brand->image);
-        // }
-        // $brand->save();
+        if(!$brand) return redirect('/admin/brands')->with(['danger' => 'Something was wrong']);
+        $request->name ? $brand->name = $request->name : '';
+        $request->status ? $brand->status = $request->status : '';
+        $request->position ? $brand->position = $request->position : '';
+        $request->name ? $brand->slug = AdminHelper::createSlug($request->name) : '';
+        if($request->file('image')){
+            File::delete(base_path() . '/public' . $brand->image);
+            $brand->image = UploadFile::uploadLocal($request->file('image'));
+        }
+        $brand->save();
 
-        // $delete = UploadFile::deleteLocal($brand->image);
+        return redirect('/admin/brands')->with(['success' => 'Update success']);
+    }
 
-        File::delete(base_path() . '/public' . $brand->image);
-        // return redirect('/admin/brands')->with(['success' => 'Update success']);
+    public function postDeleteBrand($id){
+
+    }
+
+    //brand
+    public function postCreateCategory(Request $request){
+        if(!$request->name) return redirect()->back()->with(['danger' => 'Something was wrong']);
+        $category = new Category();
+        $category->name = $request->name;
+        $category->slug = AdminHelper::createSlug($request->name);
+        $category->description = $request->description;
+        $category->position = $request->position;
+        $category->status = $request->status;
+        $category->save();
+
+        return redirect('/admin/categories')->with(['success' => 'Create success']);
+    }
+
+    public function postUpdateCategory($id,Request $request){
+        $category = Category::find($id);
+        if(!$category) return redirect('/admin/categories')->with(['danger' => 'Something was wrong']);
+        $request->name ? $category->name = $request->name : '';
+        $request->status ? $category->status = $request->status : '';
+        $request->position ? $category->position = $request->position : '';
+        $request->name ? $category->slug = AdminHelper::createSlug($request->name) : '';
+        $request->description ? $category->description = $request->description : '';
+        $category->save();
+
+        return redirect('/admin/categories')->with(['success' => 'Update success']);
     }
 }

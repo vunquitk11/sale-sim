@@ -44,20 +44,32 @@
                         <div class="form-group align-center-row">
                             <label class="col-md-3 col-lg-2 control-label">Tên category: </label>
                             <div class="col-md-9 col-lg-10">
-                                <input type="text" name="category_name" class="form-control" id="category_name" required>
+                                <input type="text" name="name" class="form-control" required>
                             </div>
                         </div>
-                            <div class="form-group align-center-row">
+                        <div class="form-group align-center-row">
+                            <label class="col-md-3 col-lg-2 control-label">Mô tả: </label>
+                            <div class="col-md-9 col-lg-10">
+                                <textarea class="textarea_V_09_07" name="description"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group align-center-row">
+                            <label class="col-md-3 col-lg-2 control-label">Thứ tự hiển thị: </label>
+                            <div class="col-md-3 col-lg-2">
+                                <input type="number" value="0" name="position" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group align-center-row">
                             <label class="col-md-3 col-lg-2 control-label" for="status">Trạng thái: </label>
-                            <div class="col-md-9 col-lg-4">
-                                <select class="select2_demo_1 form-control" id="disbale" name="disable" required>
-                                    <option value="0" selected>Hiện</option>
-                                    <option value="1">Ẩn</option>
+                            <div class="col-md-3 col-lg-2">
+                                <select class="select2_demo_1 form-control" name="status" required>
+                                    <option value="0" selected>Ẩn</option>
+                                    <option value="1">Hiện</option>
                                 </select>
                             </div>
                         </div> 
                         <div class="form-footer">
-                            <button type="submit" class="btn btn-info form-submit-btn" id="upload-video-button">Thêm category</button>
+                            <button type="submit" class="btn btn-info form-submit-btn">Thêm category</button>
                         </div>   
                     </form>
                 </div>
@@ -73,17 +85,9 @@
 <script src="{{ asset('frontend/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
 <script src="{{ asset('frontend/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
 
-<!-- SUMMERNOTE -->
-<script src="{{ asset('frontend/js/plugins/summernote/summernote.min.js')}}"></script>
-<script src="{{ asset('frontend/js/custom-link.js')}}"></script>
-<script src="{{ asset('frontend/js/custom-summernote.js')}}"></script>
-
 <!-- Chosen -->
 <script src="{{ asset('frontend/js/plugins/dataTables/datatables.min.js') }}"></script>
 <script src="{{ asset('frontend/js/plugins/chosen/chosen.jquery.js') }}"></script>
-<!-- btn-delete -->
-<script src="{{ asset('frontend/js/plugins/sweetalert/sweetalert.min.js') }}"></script>
-<script src="{{asset('js/admin-upload-video.js')}}"></script>
 <script>
     $(document).ready(function() {
         $('.dataTables').DataTable({

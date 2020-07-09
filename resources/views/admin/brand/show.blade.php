@@ -51,7 +51,7 @@ div.dataTables_wrapper div.dataTables_filter label {
                                     <thead>
                                         <tr>
                                             <th style="width:5%;">#</th>
-                                            <th style="width:20%;">Tên nhà mạng</th>
+                                            <th style="width:20%;">Tên</th>
                                             <th style="width:20%;">Ảnh</th>
                                             <th style="width:20%;">Số lượng sim</th>
                                             <th style="width:10%;">Ưu tiên</th>

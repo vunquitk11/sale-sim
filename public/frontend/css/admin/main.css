@@ -1,3 +1,9 @@
+.textarea_V_09_07 {
+    resize: none;
+    width: 50%;
+    height: 100px;
+}
+
 .wrapper-content {
     padding: 40px 25px 40px;
 }

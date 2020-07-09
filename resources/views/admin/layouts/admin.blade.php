@@ -121,9 +121,7 @@
                         <a><i class="fa fa-folder-open ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Category</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li class="{{($url == 'categories') ? 'active' : ''}}"><a href="/admin/categories" id="admin-list-category">Danh sách category</a></li>
-                            @can('gate-create-category')
                             <li class="{{($url == 'create-category') ? 'active' : ''}}"><a href="/admin/create-category">Thêm category</a></li>
-                            @endcan
                         </ul>
                     </li>
                     <li class="{{($url == 'brands' || $url == 'create-brand') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa brand">

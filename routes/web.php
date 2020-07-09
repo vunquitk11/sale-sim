@@ -34,5 +34,12 @@ Route::group([
         Route::get('/update-brand/{id}','PageAdminController@pageUpdateBrand');
         Route::post('/create-brand','AdminController@postCreateBrand');
         Route::post('/update-brand/{id}','AdminController@postUpdateBrand');
+
+        //category
+        Route::get('/categories','PageAdminController@pageCategories');
+        Route::get('/create-category','PageAdminController@pageCreateCategory');
+        Route::get('/update-category/{id}','PageAdminController@pageUpdateCategory');
+        Route::post('/create-category','AdminController@postCreateCategory');
+        Route::post('/update-category/{id}','AdminController@postUpdateCategory');
     });
 });

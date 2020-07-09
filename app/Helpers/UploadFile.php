@@ -8,8 +8,7 @@ use Illuminate\Support\Facades\File;
 use Storage;
 
 class UploadFile {
-    public static function uploadLocal($file)
-    {
+    public static function uploadLocal($file){
         $fileName = substr(md5($file->getClientOriginalName() . date("Y-m-d h:i:sa")), 15) . '.' . $file->getClientOriginalExtension();
         $file->move('upload', $fileName);
         $fileName = '/upload/' . $fileName;
@@ -17,9 +16,9 @@ class UploadFile {
     }
 
     public static function deleteLocal($url){
-        // File::delete('/' . $url);
         return base_path().'/public'.$url;
     }
+
     // public static function uploadLocal($file){
     //     $image = $file;
     //     $extension = $image->getClientOriginalExtension();

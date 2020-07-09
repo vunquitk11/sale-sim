@@ -40,14 +40,6 @@ div.dataTables_wrapper div.dataTables_filter label {
     </div>
 </div>
 
-@if(count($errors)>0)
-<div class="alert alert-danger">
-    @foreach($errors->all() as $err)
-    {{$err}}<br>
-    @endforeach
-</div>
-@endif
-
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-lg-12">
@@ -59,8 +51,11 @@ div.dataTables_wrapper div.dataTables_filter label {
                                     <thead>
                                         <tr>
                                             <th style="width:5%;">#</th>
-                                            <th>Tên category</th>
-                                            <th>Số lượng video</th>
+                                            <th style="width:20%;">Tên</th>
+                                            <th style="width:20%;">Mô tả</th>
+                                            <th style="width:20%;">Số lượng sim</th>
+                                            <th style="width:10%;">Ưu tiên</th>
+                                            <th style="width:10%;">Trạng thái</th>
                                             <th style="width:15%;">Action</th>
                                         </tr>
                                     </thead>
@@ -68,28 +63,28 @@ div.dataTables_wrapper div.dataTables_filter label {
                                     <?php
                                         $i  = 0;
                                     ?>
-                                    @if(count($categories) > 0)
-                                        @foreach ($categories as $category)
+                                    @if(isset($results))
+                                        @foreach ($results as $result)
                                             <tr>
                                                 <td>{{$i += 1}}</td>
-                                                <td>{{$category->name ? $category->name : 'Undefined'}}</td>           
-                                                <td style="font-weight: bold;">{{$category->count_video ? $category->count_video : 0}}</td>           
-                                                <td>
-                                                    @can('updateCategory',$category)
-                                                    <a href="" class="btn btn-primary btn-custom" style="background-color: #1EB0BB;">Cập nhật</a>
-                                                    @endcan
-                                                    <!-- @if($category->disable ==  0)
-                                                    <button class="btn btn-warning btn-custom" data-id="{{$category->id}}" style="width: 6rem;background-color: #F3CE0D;">Disable</button>
+                                                <td>{{$result->name ? $result->name : 'Undefined'}}</td>           
+                                                <td>{!!$result->description!!}</td>    
+                                                <td>0</td>       
+                                                <td>{{$result->position}}</td>       
+                                                <td>     
+                                                    @if($result->status == 0)                                             
+                                                    <button class="btn btn-warning btn-custom" data-id="{{$result->id}}" style="width: 6rem;background-color: #F3CE0D;">Disable</button>
                                                     @else
-                                                    <button class="btn btn-success btn-custom" data-id="{{$category->id}}" style="width: 6rem;">Activate</button>
-                                                    @endif -->
-                                                    @can('deleteCategory',$category)
-                                                        @if($category->count_video > 0)
+                                                    <button class="btn btn-success btn-custom" data-id="{{$result->id}}" style="width: 6rem;">Activate</button>
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <a href="/admin/update-category/{{$result->id}}" class="btn btn-primary btn-custom" style="background-color: #1EB0BB;">Cập nhật</a>
+                                                    @if($result->count > 0)
                                                         <button class="btn btn-danger btn-custom btn-delete" style="width: 6rem;" disabled>Xóa</button>
-                                                        @else
-                                                        <button class="btn btn-danger btn-custom btn-delete" data-id="{{$category->id}}" style="width: 6rem;">Xóa</button>
-                                                        @endif
-                                                    @endcan
+                                                    @else
+                                                        <button class="btn btn-danger btn-custom btn-delete" data-id="{{$result->id}}" style="width: 6rem;">Xóa</button>
+                                                    @endif
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -111,11 +106,6 @@ div.dataTables_wrapper div.dataTables_filter label {
 <script src="{{ asset('frontend/js/bootstrap.min.js')}}"></script>
 <script src="{{ asset('frontend/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
 <script src="{{ asset('frontend/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
-
-<!-- SUMMERNOTE -->
-<script src="{{ asset('frontend/js/plugins/summernote/summernote.min.js')}}"></script>
-<script src="{{ asset('frontend/js/custom-link.js')}}"></script>
-<script src="{{ asset('frontend/js/custom-summernote.js')}}"></script>
 
 <!-- Chosen -->
 <script src="{{ asset('frontend/js/plugins/dataTables/datatables.min.js') }}"></script>
