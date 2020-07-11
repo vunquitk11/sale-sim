@@ -1,7 +1,8 @@
 
 @extends('admin.layouts.admin')
-<title>Thêm nhà mạng</title>
+<title>Thêm bài viết</title>
 @section('css')
+<link href="css/plugins/summernote/summernote-bs4.css" rel="stylesheet">
 <link href="{{ asset('frontend/css/plugins/summernote/summernote.css') }}" rel="stylesheet">
 <style>
 #uploadProgress{
@@ -16,16 +17,16 @@
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
-        <h2>Thêm nhà mạng</h2>
+        <h2>Thêm bài viết</h2>
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="/admin">Home</a>
             </li>
             <li class="breadcrumb-item">
-                <a>Quản lí nhà mạng</a>
+                <a>Quản lí bài viết</a>
             </li>
             <li class="breadcrumb-item active">
-                <strong>Thêm nhà mạng</strong>
+                <strong>Thêm bài viết</strong>
             </li>
         </ol>
     </div>
@@ -35,22 +36,41 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <p class="edit-title">Thêm nhà mạng</p>
+                    <p class="edit-title">Thêm bài viết</p>
                 </div>
                 <div class="ibox-content">
                     <form class="form-horizontal" method="POST"  enctype="multipart/form-data" action="">
                         @csrf
-                        <!-- <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" /> -->
+
                         <div class="form-group align-center-row">
-                            <label class="col-md-3 col-lg-2 control-label">Tên nhà mạng: </label>
+                            <label class="col-md-3 col-lg-2 control-label">Tên bài viết: </label>
                             <div class="col-md-9 col-lg-10">
                                 <input type="text" name="name" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group align-center-row">
-                            <label class="col-md-3 col-lg-2 control-label">Hình ảnh: </label>
+                            <label class="col-md-3 col-lg-2 control-label">Tiêu đề: </label>
                             <div class="col-md-9 col-lg-10">
-                                <input type="file" accept="image/x-png,image/gif,image/jpeg" name="image" class="form-control" required>
+                                <input type="text" name="title" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group align-center-row">
+                            <label class="col-md-3 col-lg-2 control-label" for="status">Category: </label>
+                            <div class="col-md-3 col-lg-2">
+                                @if(isset($categories))
+                                    <select class="select2_demo_1 form-control" name="category_id" required>
+                                        <option value="0" selected>Chọn category</option>
+                                        @foreach($categories as $category)
+                                             <option value="{{$category->id}}">{{$category->name ? $category->name : 'null'}}</option>
+                                        @endforeach
+                                    </select>
+                                @endif
+                            </div>
+                        </div> 
+                        <div class="form-group align-center-row">
+                            <label class="col-md-3 col-lg-2 control-label">Nội dung: </label>
+                            <div class="col-md-9 col-lg-10">
+                                <textarea class="summernote" id="content" name="content"></textarea>
                             </div>
                         </div>
                         <div class="form-group align-center-row">
@@ -69,7 +89,7 @@
                             </div>
                         </div> 
                         <div class="form-footer">
-                            <button type="submit" class="btn btn-info form-submit-btn">Thêm nhà mạng</button>
+                            <button type="submit" class="btn btn-info form-submit-btn">Thêm bài viết</button>
                         </div>   
                     </form>
                 </div>
@@ -87,6 +107,7 @@
 <!-- Chosen -->
 <script src="{{ asset('frontend/js/plugins/dataTables/datatables.min.js') }}"></script>
 <script src="{{ asset('frontend/js/plugins/chosen/chosen.jquery.js') }}"></script>
+<script src="{{ asset('frontend/js/summernote.js')}}"></script>
 <script>
     $(document).ready(function() {
         $('.dataTables').DataTable({

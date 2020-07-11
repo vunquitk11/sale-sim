@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 //model
 use App\Brand;
 use App\Category;
+use App\Post;
+use App\User;
 
 class PageAdminController extends Controller
 {
@@ -25,6 +27,36 @@ class PageAdminController extends Controller
             if($user->type == 2) return redirect('/admin');
         }
         return view('admin.auth.login');
+    }
+    
+    //user
+    public function pageUsers(){
+        $results = User::where('type',0)->get();
+        foreach($results as $result){
+            $result['count'] = 0;
+        }
+        return view('admin.user.show')->with([
+            'url' => 'users',
+            'results' => $results,
+        ]);
+    }
+
+    public function pageCreateUser(){
+        return view('admin.user.create')->with([
+            'url' => 'create-user',
+        ]);
+    }
+
+    public function pageUpdateUser($id){
+        $user = User::where([
+            'id' => $id,
+            'type' => 0,
+        ])->first();
+        if(!$user) return redirect('/admin/users')->with(['danger' => 'Something was wrong']);
+        return view('admin.user.update')->with([
+            'url' => 'users',
+            'result' => $user,
+        ]);
     }
 
     //brand
@@ -56,7 +88,7 @@ class PageAdminController extends Controller
 
     //category
     public function pageCategories(){
-        $results = Category::orderBy('position','DESC')->get();
+        $results = Category::where('type',0)->orderBy('position','DESC')->get();
         foreach($results as $result){
             $result['count'] = 0;
         }
@@ -73,11 +105,73 @@ class PageAdminController extends Controller
     }
 
     public function pageUpdateCategory($id){
-        $category = Category::find($id);
+        $category = Category::where([
+            'id' => $id,
+            'type' => 0,
+        ])->first();
         if(!$category) return redirect('/admin/categories')->with(['danger' => 'Something was wrong']);
         return view('admin.category.update')->with([
             'url' => 'categories',
             'result' => $category,
+        ]);
+    }
+
+    //book
+    public function pageBooks(){
+        $results = Category::where('type',1)->orderBy('position','DESC')->get();
+        foreach($results as $result){
+            $result['count'] = 0;
+        }
+        return view('admin.book.show')->with([
+            'url' => 'blog-categories',
+            'results' => $results,
+        ]);
+    }
+
+    public function pageCreateBook(){
+        return view('admin.book.create')->with([
+            'url' => 'create-blog-category',
+        ]);
+    }
+
+    public function pageUpdateBook($id){
+        $category = Category::where([
+            'id' => $id,
+            'type' => 1,
+        ])->first();
+        if(!$category) return redirect('/admin/books')->with(['danger' => 'Something was wrong']);
+        return view('admin.book.update')->with([
+            'url' => 'blog-categories',
+            'result' => $category,
+        ]);
+    }
+
+    //post
+
+    public function pagePosts(){
+        $results = Post::all();
+        return view('admin.post.show')->with([
+            'url' => 'posts',
+            'results' => $results,
+        ]);
+    }
+
+    public function pageCreatePost(){
+        $categories = Category::where('type',1)->select('id','name')->get();
+        return view ('admin.post.create')->with([
+            'url' => 'create-post',
+            'categories' => $categories,
+        ]);
+    }
+
+    public function pageUpdatePost($slug, Request $request){
+        $categories = Category::where('type',1)->select('id','name')->get();
+        $result = Post::where('slug',$slug)->first();
+        if(!$result) return redirect('/admin/posts')->with(['danger' => 'Something was wrong',]);
+        return view('admin.post.update')->with([
+            'url' => 'posts',
+            'result' => $result,
+            'categories' => $categories,
         ]);
     }
 }

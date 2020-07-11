@@ -9,14 +9,8 @@
 
     <title>ShopSim98| Admin Page</title>
 
-    {{-- <meta property="og:url"                content="https://yamlive.spyets.com/admin" /> --}}
-    <meta property="og:title"              content="ShopSim98 Admin" />
-    <meta property="og:description"        content="Admin Dashboard for ShopSim98" />
-    {{-- <meta property="og:image"              content="https://s3.ap-southeast-1.amazonaws.com/yamlive/28d64a089602a3537.jpg" /> --}}
-
     <link href="{{asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{asset('frontend/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
-    <link rel="icon" href="{{asset('public/images/favicon.png')}}">
     <!-- Toastr style -->
     <link href="{{asset('frontend/css/plugins/toastr/toastr.min.css') }}" rel="stylesheet">
 
@@ -24,9 +18,7 @@
     <link href="{{asset('frontend/css/style.css') }}" rel="stylesheet">
     <link href="{{asset('frontend/css/custom.css') }}" rel="stylesheet">
     <link href="{{asset('frontend/css/admin/main.css') }}" rel="stylesheet">
-    <meta property="og:image" content="https://yt3.ggpht.com/a-/ACSszfG6SiS4096AdxOv4vjhBXJphsGQuBWBBwkLww=s900-mo-c-c0xffffffff-rj-k-no" />
-    <meta property="og:image:secure_url" content="https://yt3.ggpht.com/a-/ACSszfG6SiS4096AdxOv4vjhBXJphsGQuBWBBwkLww=s900-mo-c-c0xffffffff-rj-k-no" />
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" rel="stylesheet">
     @yield('css')
 
     @yield('header')
@@ -50,85 +42,74 @@
                     <li class="{{($url == 'page-home') ? 'active' : ''}}  toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Video">
                         <a><i class="fa fa-picture-o" aria-hidden="true"></i><span class="nav-label ul-header">Giao diện</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li class="{{($url == 'page-home') ? 'active' : ''}}"><a href="/admin/page-home" id="" >Trang chủ</a></li>
+                            <li class="{{($url == 'page-home') ? 'active' : ''}}"><a href="/admin/page-home">Trang chủ</a></li>
                         </ul>
                         <ul class="nav nav-second-level collapse">
-                            <li class="{{($url == 'page-info-recharge') ? 'active' : ''}}"><a href="/admin/page-info-recharge" id="" >Thông tin nạp tiền</a></li>
+                            <li class="{{($url == 'page-home') ? 'active' : ''}}"><a href="/admin/page-home">Trang liên hệ</a></li>
+                        </ul>
+                        <ul class="nav nav-second-level collapse">
+                            <li class="{{($url == 'page-home') ? 'active' : ''}}"><a href="/admin/page-home">Footer</a></li>
+                        </ul>
+                        <ul class="nav nav-second-level collapse">
+                            <li class="{{($url == 'page-info-recharge') ? 'active' : ''}}"><a href="/admin/page-info-recharge">Thông tin nạp tiền</a></li>
                         </ul>
                     </li>
                     <li class="{{($url == 'users' || $url == 'create-user' || $url == 'edit-user' || $url == 'analytics-artist') ? 'active' : ''}}  toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Video">
-                        <a><i class="fa fa-user ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">User</span><span class="fa fa-caret-down"></span></a>
+                        <a><i class="fa fa-user ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Khách hàng</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li class="{{($url == 'users') ? 'active' : ''}}"><a href="/admin/users/all" id="" >Danh sách người dùng</a></li>
-                            <li class="{{($url == 'analytics-artist') ? 'active' : ''}}"><a href="/admin/analytics-artist/all" id="admin-analytics-user">Analytics user</a></li>
-                            @can('gate-create-user')
-                            <li class="{{($url == 'create-user') ? 'active' : ''}}"><a href="/admin/create-user">Thêm người dùng</a></li>
-                            @endcan
+                            <li class="{{($url == 'users') ? 'active' : ''}}"><a href="/admin/users">Danh sách khách hàng</a></li>
+                            <li class="{{($url == 'create-user') ? 'active' : ''}}"><a href="/admin/create-user">Thêm khách hàng</a></li>
+                            <li class="{{($url == 'analytics-artist') ? 'active' : ''}}"><a href="/admin/a">Trích xuất</a></li>
                         </ul>
                     </li>
-                    <li class="{{($url == 'role-user' || $url == 'role-group' || $url == 'role-permission') ? 'active' : ''}}  toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Video">
+                    {{-- <li class="{{($url == 'role-user' || $url == 'role-group' || $url == 'role-permission') ? 'active' : ''}}  toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Video">
                         <a><i class="fa fa-users ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Role</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            @can('gate-view-moderator')
                             <li class="{{($url == 'role-user') ? 'active' : ''}}"><a href="/admin/role/user">Phân quyền</a></li>
-                            @endcan
-                            @can('gate-view-role')
                             <li class="{{($url == 'role-group') ? 'active' : ''}}"><a href="/admin/role/group">Nhóm quyền</a></li>
-                            @endcan
                         </ul>
-                    </li>
-                    <li class="{{($url == 'platform-log') ? 'active' : ''}}  toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Video">
+                    </li> --}}
+                    {{-- <li class="{{($url == 'platform-log') ? 'active' : ''}}  toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Video">
                         <a><i class="fa fa-bell" aria-hidden="true"></i> <span class="nav-label ul-header">Platform log</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
                             <li class="{{($url == 'platform-log') ? 'active' : ''}}"><a href="/admin/log/platform-log">Activities log</a></li>
                             <li><a href="/admin/logs">System log</a></li>
                         </ul>
-                    </li>
-                    <li class="{{($url == 'videos' || $url == 'create-video' || $url == 'analytics-video' || $url == 'edit-video' || $url == 'video-waiting') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Video">
-                        <a><i class="fa fa-video-camera ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Video</span><span class="fa fa-caret-down"></span></a>
+                    </li> --}}
+                    <li class="{{($url == 'brands' || $url == 'create-brand') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa brand">
+                        <a><i class="fa fa-credit-card-alt ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Sim</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            @can('gate-view-video')
-                            <li class="{{($url == 'videos') ? 'active' : ''}}"><a href="/admin/videos/all" id="">Danh sách video</a></li>
-                            @endcan
-                            @can('gate-verify-video')
-                            <li class="{{($url == 'video-waiting') ? 'active' : ''}}"><a href="/admin/video-waiting/all" id="">Kiểm duyệt video</a></li>
-                            @endcan
-                            <li class="{{($url == 'analytics-video') ? 'active' : ''}}"><a href="/admin/analytics-video/all" id="admin-analytics-video">Analytics video</a></li>
-                            @can('gate-create-video')
-                            <li class="{{($url == 'create-video') ? 'active' : ''}}"><a href="/admin/create-video">Thêm video</a></li>
-                            @endcan
-                        </ul>
-                    </li>
-                    <li class="{{($url == 'events' || $url == 'info-event'|| $url == 'create-event' || $url == 'edit-event' || $url == 'event-waiting') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa event">
-                        <a><i class="fa fa-calendar" aria-hidden="true"></i> <span class="nav-label ul-header">Event</span><span class="fa fa-caret-down"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li class="{{($url == 'events') ? 'active' : ''}}"><a href="/admin/events/all" id="admin-list-event">Danh sách event</a></li>
-                            @can('gate-verify-event')
-                            <li class="{{($url == 'event-waiting') ? 'active' : ''}}"><a href="/admin/event-waiting/all" id="">Kiểm duyệt event</a></li>
-                            @endcan
-                        </ul>
-                    </li>
-                    <li class="{{($url == 'albums' || $url == 'info-album'|| $url == 'create-album' || $url == 'edit-album') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Album">
-                        <a><i class="fa fa-th-list ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Album</span><span class="fa fa-caret-down"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li class="{{($url == 'albums') ? 'active' : ''}}"><a href="/admin/albums/all" id="admin-list-album">Danh sách album</a></li>
-                            @can('gate-create-album')
-                            <li class="{{($url == 'create-album') ? 'active' : ''}}"><a href="/admin/create-album">Thêm album</a></li>
-                            @endcan
+                            <li class="{{($url == 'brands') ? 'active' : ''}}"><a href="/admin/brands">Danh sách Sim</a></li>
+                            <li class="{{($url == 'create-brand') ? 'active' : ''}}"><a href="/admin/create-brand">Thêm Sim</a></li>
+                            <li class="{{($url == 'create-brand') ? 'active' : ''}}"><a href="/admin/create-brand">Trích xuất</a></li>
                         </ul>
                     </li>
                     <li class="{{($url == 'categories' || $url == 'create-category') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Category">
                         <a><i class="fa fa-folder-open ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Category</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li class="{{($url == 'categories') ? 'active' : ''}}"><a href="/admin/categories" id="admin-list-category">Danh sách category</a></li>
+                            <li class="{{($url == 'categories') ? 'active' : ''}}"><a href="/admin/categories">Danh sách category</a></li>
                             <li class="{{($url == 'create-category') ? 'active' : ''}}"><a href="/admin/create-category">Thêm category</a></li>
                         </ul>
                     </li>
                     <li class="{{($url == 'brands' || $url == 'create-brand') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa brand">
                         <a><i class="fa fa-phone-square ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Nhà mạng</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li class="{{($url == 'brands') ? 'active' : ''}}"><a href="/admin/brands" id="admin-list-brand">Danh sách nhà mạng</a></li>
+                            <li class="{{($url == 'brands') ? 'active' : ''}}"><a href="/admin/brands">Danh sách nhà mạng</a></li>
                             <li class="{{($url == 'create-brand') ? 'active' : ''}}"><a href="/admin/create-brand">Thêm nhà mạng</a></li>
+                        </ul>
+                    </li>
+                    <li class="{{($url == 'blog-categories' || $url == 'create-blog-category') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa blog category">
+                        <a><i class="fa fa-book ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Blog Category</span><span class="fa fa-caret-down"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li class="{{($url == 'blog-categories') ? 'active' : ''}}"><a href="/admin/blog-categories">Danh sách Post category</a></li>
+                            <li class="{{($url == 'create-blog-category') ? 'active' : ''}}"><a href="/admin/create-blog-category">Thêm Post category</a></li>
+                        </ul>
+                    </li>
+                    <li class="{{($url == 'posts' || $url == 'create-post') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa post category">
+                        <a><i class="fa fa-newspaper-o ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Post</span><span class="fa fa-caret-down"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li class="{{($url == 'posts') ? 'active' : ''}}"><a href="/admin/posts">Danh sách Post</a></li>
+                            <li class="{{($url == 'create-post') ? 'active' : ''}}"><a href="/admin/create-post">Thêm Post</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -147,7 +128,6 @@
                             </a>
                         </li>
                     </ul>
-
                 </nav>
             </div>
             @yield('content')
@@ -158,7 +138,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Mainly scripts -->
     <script src="{{asset('frontend/js/jquery-3.1.1.min.js') }}"></script>
@@ -173,8 +152,24 @@
     <script src="{{asset('frontend/js/plugins/toastr/toastr.min.js') }}"></script>
     <script src="{{asset('frontend/js/plugins/chartJs/Chart.min.js')}}"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
     @yield('script')
     <script>
+        $('.summernote').summernote({
+            height: 300,
+            minHeight: null, 
+            maxHeight: null, 
+            callbacks: {
+                onPaste: function (e) {
+                    var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                    e.preventDefault();
+                    setTimeout(function () {
+                        document.execCommand('insertText', false, bufferText);
+                    }, 10);
+                }
+            }
+        });
+
         var width = $('#cancel-button').width();
         var height = $('#cancel-button').height();
         function loadingButton(id){

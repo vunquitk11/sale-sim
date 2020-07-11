@@ -9,9 +9,11 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Brand;
 use App\Category;
+use App\Post;
 //helper
 use App\Helpers\UploadFile;
 use App\Helpers\AdminHelper;
+use Validator;
 use Storage;
 use File;
 
@@ -35,6 +37,63 @@ class AdminController extends Controller
                 return redirect('/admin/login')->with('danger', 'Sai thông tin đăng nhập');
             }
         }
+    }
+
+    //user
+    public function postCreateUser(Request $request){
+        if(!$request->name || !$request->email) return redirect()->back()->with(['danger' => 'Something was wrong']);
+
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|string|email|unique:users',
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->with(['danger' => 'Email has already']);
+        }
+
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->type = $request->type;
+        // if($request->file('image')){
+        //     $user->image = UploadFile::uploadLocal($request->file('image'));
+        // }
+        $user->password = bcrypt($request->email);
+        $user->status = $request->status;
+        $user->save();
+
+        return redirect('/admin/users')->with(['success' => 'Create success']);
+    }
+
+    public function postUpdateUser($id,Request $request){
+        if(!$request->name || !$request->email) return redirect()->back()->with(['danger' => 'Something was wrong']);
+
+        $user = User::whereIn('type',[0,1])->where('id',$id)->first();
+        if(!$user) return redirect('/admin/users')->with(['danger' => 'Something was wrong']);
+
+        if($request->email != $user->email){
+            $validator = Validator::make($request->all(), [
+                'email' => 'required|string|email|unique:users',
+            ]);
+            if ($validator->fails()) {
+                return redirect()->back()->with(['danger' => 'Email has already']);
+            }
+        }
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->type = $request->type;
+        // if($request->file('image')){
+        //     $user->image = UploadFile::uploadLocal($request->file('image'));
+        // }
+        $request->password ? $user->password = bcrypt($request->password) : '';
+        $user->status = $request->status;
+        $user->save();
+
+        return redirect('/admin/users')->with(['success' => 'Update success']);
     }
 
     //brand
@@ -73,7 +132,7 @@ class AdminController extends Controller
 
     }
 
-    //brand
+    //category
     public function postCreateCategory(Request $request){
         if(!$request->name) return redirect()->back()->with(['danger' => 'Something was wrong']);
         $category = new Category();
@@ -88,7 +147,10 @@ class AdminController extends Controller
     }
 
     public function postUpdateCategory($id,Request $request){
-        $category = Category::find($id);
+        $category = Category::where([
+            'id' => $id,
+            'type' => 0,
+        ])->first();
         if(!$category) return redirect('/admin/categories')->with(['danger' => 'Something was wrong']);
         $request->name ? $category->name = $request->name : '';
         $request->status ? $category->status = $request->status : '';
@@ -98,5 +160,96 @@ class AdminController extends Controller
         $category->save();
 
         return redirect('/admin/categories')->with(['success' => 'Update success']);
+    }
+
+    //book
+    public function postCreateBook(Request $request){
+        if(!$request->name) return redirect()->back()->with(['danger' => 'Something was wrong']);
+        $category = new Category();
+        $category->name = $request->name;
+        $category->slug = AdminHelper::createSlug($request->name);
+        $category->description = $request->description;
+        $category->position = $request->position;
+        $category->status = $request->status;
+        $category->type = 1;
+        $category->save();
+
+        return redirect('/admin/blog-categories')->with(['success' => 'Create success']);
+    }
+
+    public function postUpdateBook($id,Request $request){
+        $category = Category::where([
+            'id' => $id,
+            'type' => 1,
+        ])->first();
+        if(!$category) return redirect('/admin/blog-categories')->with(['danger' => 'Something was wrong']);
+        $request->name ? $category->name = $request->name : '';
+        $request->status ? $category->status = $request->status : '';
+        $request->position ? $category->position = $request->position : '';
+        $request->name ? $category->slug = AdminHelper::createSlug($request->name) : '';
+        $request->description ? $category->description = $request->description : '';
+        $category->save();
+
+        return redirect('/admin/blog-categories')->with(['success' => 'Update success']);
+    }
+
+    //post
+    public function postCreatePost(Request $request){
+        if(!$request->name || !$request->content)
+        return redirect()->back()->with(['danger' => 'Something was wrong']);
+
+        //check category
+        if($request->category_id != 0){
+            $category = Category::find($request->category_id);
+            if(!$category)
+            return redirect()->back()->with(['danger' => 'Something was wrong']);
+        }
+
+        $post = new Post();
+        $post->name = $request->name;
+        $post->title = $request->title;
+        $post->slug = AdminHelper::createSlugTime($request->name);
+        $post->content = $request->content;
+        $post->category_id = $request->category_id;
+        $post->status = $request->status;
+        $post->position = $request->position;
+
+        $post->save();
+
+        return redirect('/admin/posts')->with([
+            'success' => 'Create success',
+        ]);
+    }
+
+    public function postUpdatePost($slug, Request $request){
+        if(!$request->name || !$request->content)
+        return redirect()->back()->with(['danger' => 'Something was wrong']);
+
+        //check category
+        if($request->category_id != 0){
+            $category = Category::find($request->category_id);
+            if(!$category)
+            return redirect()->back()->with(['danger' => 'Something was wrong']);
+        }
+
+        $post = Post::where('slug',$slug)->first();
+        if(!$post) 
+        return redirect('/admin/posts')->with([
+            'danger' => 'Something was wrong',
+        ]);
+
+        $post->name = $request->name;
+        $post->title = $request->title;
+        $post->slug = AdminHelper::createSlugTime($request->name);
+        $post->content = $request->content;
+        $post->category_id = $request->category_id;
+        $post->status = $request->status;
+        $post->position = $request->position;
+
+        $post->save();
+
+        return redirect('/admin/posts')->with([
+            'success' => 'Update success',
+        ]);
     }
 }

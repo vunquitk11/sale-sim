@@ -28,6 +28,14 @@ Route::group([
         'middleware' => 'admin'
     ], function () {
         Route::get('/','PageAdminController@pageAdminDashboard');
+
+        //user
+        Route::get('/users','PageAdminController@pageUsers');
+        Route::get('/create-user','PageAdminController@pageCreateUser');
+        Route::get('/update-user/{id}','PageAdminController@pageUpdateUser');
+        Route::post('/create-user','AdminController@postCreateUser');
+        Route::post('/update-user/{id}','AdminController@postUpdateUser');
+
         //brand
         Route::get('/brands','PageAdminController@pageBrands');
         Route::get('/create-brand','PageAdminController@pageCreateBrand');
@@ -41,5 +49,19 @@ Route::group([
         Route::get('/update-category/{id}','PageAdminController@pageUpdateCategory');
         Route::post('/create-category','AdminController@postCreateCategory');
         Route::post('/update-category/{id}','AdminController@postUpdateCategory');
+
+        //book
+        Route::get('/blog-categories','PageAdminController@pageBooks');
+        Route::get('/create-blog-category','PageAdminController@pageCreateBook');
+        Route::get('/update-blog-category/{id}','PageAdminController@pageUpdateBook');
+        Route::post('/create-blog-category','AdminController@postCreateBook');
+        Route::post('/update-blog-category/{id}','AdminController@postUpdateBook');
+
+        //post
+        Route::get('/posts','PageAdminController@pagePosts');
+        Route::get('/create-post','PageAdminController@pageCreatePost');
+        Route::get('/update-post/{slug}','PageAdminController@pageUpdatePost');
+        Route::post('/create-post','AdminController@postCreatePost');
+        Route::post('/update-post/{slug}','AdminController@postUpdatePost');
     });
 });

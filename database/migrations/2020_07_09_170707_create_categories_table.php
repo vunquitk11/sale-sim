@@ -20,6 +20,7 @@ class CreateCategoriesTable extends Migration
             $table->text('description')->nullable();
             $table->integer('position')->default(0);
             $table->integer('status')->default(0);
+            $table->integer('type')->default(0);
             $table->timestamps();
         });
     }
