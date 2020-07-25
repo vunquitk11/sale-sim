@@ -1,0 +1,763 @@
+@charset "UTF-8";
+@import "./base.css";
+@import "./normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+:root {
+	--main-color: #087b37;
+}
+* {
+	padding: 0;
+	margin: 0;
+}
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, input, button, textarea, select, p, blockquote, th, td, pre, address, li, dt, dd {
+	-webkit-text-size-adjust: none;
+}
+a {
+	color: #333;
+}
+a:hover, a:active {
+	color: #333;
+	text-decoration: none;
+}
+table {
+    width: 100%;
+}
+p, dd, td, th, li {
+	line-height: 2em;
+}
+p {
+	margin: 0 0 1.4em;
+}
+img {
+	max-width: 100%;
+	vertical-align: bottom;
+}
+.bold {
+    font-weight: bold;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+#totop {
+	position: fixed;
+	bottom: 60px;
+	right: 40px;
+	z-index: 10;
+	width: 60px;
+	margin: 0;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	pointer-events: none;
+	opacity: 0;
+}
+#totop.show {
+	opacity: 1;
+	pointer-events: unset;
+}
+#totop:hover {
+  opacity: 0.7;
+}
+table {
+	width: 100%;
+}
+table th, table td {
+	color: #333;
+}
+/****************** Container *****************/
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #333;
+  font-size: 14px;
+  background: #f2f2f2;
+}
+.header-top {
+	background: #fff;
+	padding: 30px 0;
+}
+.header-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+.header-top p {
+	margin: 0;
+}
+#gnavi {
+	background: var(--main-color);
+	margin-bottom: 30px;
+}
+#gnavi ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#gnavi li {
+	width: 20%;
+}
+#gnavi a {
+	position: relative;
+	padding: 10px 5px;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #fff;
+	transition: all 0.2s ease;
+}
+#gnavi a:hover {
+	background: #fff;
+	color: var(--main-color);
+}
+#gnavi a::before {
+	position: absolute;
+	content: '';
+	top: calc(50% - 10px);
+	right: 0;
+	width: 1px;
+	height: 20px;
+	background: #fff;
+}
+#gnavi ul li:last-child a::before {
+	content: none;
+}
+#mainvisual {
+	height: 400px;
+	background: url('../images/mainvisual.jpg') center no-repeat;
+	background-size: cover;
+}
+.sidebar {
+	border: 1px solid;
+}
+.sidebar:not(:last-child) {
+	margin-bottom: 30px;
+}
+.sidebar-title {
+	margin-bottom: 0;
+	text-align: center;
+	background: #333;
+	color: #fff;
+	padding: 7px;
+	font-weight: 600;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.sidebar ul {
+	padding: 7px;
+}
+.sidebar li a {
+	display: block;
+	padding: 7px;
+	text-decoration: none;
+	font-weight: 500;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.sidebar li a:hover {
+	text-decoration: underline;
+}
+.sidebar li:not(:last-child) {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+.product-tbl th, .product-tbl td {
+	text-align: center;
+	padding: 20px 10px;
+	border: 1px solid #e6e6e6;
+	font-weight: 600;
+	background: #fff;
+}
+.product-tbl th {
+	padding: 5px 10px;
+	color: #fff;
+	background: var(--main-color);
+}
+.product-tbl .sim-number a {
+	text-decoration: none;
+	color: var(--main-color);
+	font-size: 18px;
+	position: relative;
+}
+.product-tbl a.promotion::before {
+	content: '';
+	position: absolute;
+	background: url(../images/icon_gift.png) center center no-repeat;
+	background-size: 100% auto;
+	width: 15px;
+    height: 15px;
+    top: -10px;
+    right: -20px;
+}
+.product-tbl .sim-number a:hover {
+	text-decoration: underline;
+}
+.product-tbl .Viettel {
+	background: #fff url('../images/icon_viettel.png') center center no-repeat;
+	background-size: 80px auto;
+}
+.product-tbl .Vinaphone {
+	background: #fff url('../images/icon_vinaphone.png') center center no-repeat;
+	background-size: 60px auto;
+}
+.product-tbl .Mobifone {
+	background: #fff url('../images/icon_mobifone.png') center center no-repeat;
+	background-size: 60px auto;
+}
+.product-tbl .Vietnamobile {
+	background:#fff  url('../images/icon_vietnamobile.png') center center no-repeat;
+	background-size: 60px auto;
+}
+.product-tbl .Gmobile {
+	background: #fff url('../images/icon_gmobile.png') center center no-repeat;
+	background-size: 60px auto;
+}
+.product-tbl .stt, .product-tbl .product {
+	font-size: 12px;
+	font-weight: 500;
+}
+.product-tbl button {
+	font-size: 12px;
+	padding: 4px 8px;
+	font-weight: 500;
+	cursor: pointer;
+	background: #fcaf17;
+	border: 1px solid transparent;
+	color: #fff;
+	border-radius: 3px;
+	box-sizing: border-box;
+	outline: none;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+	transition: all 0.2s ease;
+}
+.product-tbl button:hover {
+	border: 1px solid #fcaf17;
+	color: #fcaf17;
+	background: #fff;
+}
+.notfound {
+	text-align: center;
+	color: #333;
+	font-weight: 700;
+	font-size: 140px;
+	line-height: 1em;
+	text-transform: uppercase;
+	margin-bottom: 0;
+	margin-top: 60px;
+}
+.notfound span {
+	display: block;
+	font-size: 40px;
+	line-height: 1.6em;
+}
+.notfound .pagenotfound {
+	font-size: 20px;
+	font-weight: 500;
+}
+.sim-information {
+    background: #f7f7f7;
+    padding: 30px 20px;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+.sim-information .sim-number span:last-child {
+	font-size: 28px;
+	color: var(--main-color);
+	font-weight: 600;
+}
+.sim-information .sim-price span:last-child {
+	font-weight: 600;
+	font-size: 22px;
+	color: var(--main-color);
+}
+.sim-information .sim-product span:last-child {
+	font-weight: 600;
+}
+.sim-information .label {
+	width: 80px;
+	display: inline-block;
+}
+.sim-information p {
+	font-weight: 500;
+}
+.sim-information .sim-cate {
+    display: flex;
+    align-items: center;
+}
+.sim-information .sim-cate span:last-child {
+	display: inline-block;
+	background: url('../images/icon_viettel.png') center center no-repeat;
+	background-size: 60px auto;
+	padding: 25px 30px;
+}
+.sim-information .sim-cate.Mobifone span:last-child {
+	padding: 10px 30px;
+	background: url('../images/icon_mobifone.png') center center no-repeat;
+	background-size: 60px auto;
+}
+.sim-information .sim-cate.Vinaphone span:last-child {
+	padding: 10px 30px;
+	background: url('../images/icon_vinaphone.png') center center no-repeat;
+	background-size: 60px auto;
+}
+.sim-information .sim-cate.Vietnamobile span:last-child {
+	padding: 15px 30px;
+	background: url('../images/icon_vietnamobile.png') center center no-repeat;
+	background-size: 60px auto;
+}
+.sim-information .sim-cate.Gmobile span:last-child {
+	padding: 15px 30px;
+	background: url('../images/icon_gmobile.png') center center no-repeat;
+	background-size: 60px auto;
+}
+.sim-information .promotion-title {
+	padding-left: 30px;
+	font-weight: 700;
+	font-size: 18px;
+	text-transform: uppercase;
+	background: url('../images/icon_gift.png') top calc(50% - 2px) left no-repeat;
+	background-size: 20px auto;
+	margin-bottom: 10px;
+}
+.sim-information .promotion-content p {
+	padding-left: 20px;
+	background: url('../images/icon_check.png') top 8px left no-repeat;
+	background-size: 12px auto;
+	color: var(--main-color);
+}
+.sim-information button {
+	margin: 0 auto;
+    display: block;
+    border: 1px solid #fcaf17;
+    background: #fcaf17;
+    color: #fff;
+    padding: 15px 30px;
+    cursor: pointer;
+	font-weight: 500;
+	outline: none;
+	transition: all 0.2s ease;
+}
+.sim-information button:hover {
+	background: #fff;
+	color: #fcaf17;
+}
+.pay-box {
+	width: 100%;
+	max-width: 560px;
+	margin: 0 auto;
+	border: 1px solid var(--main-color);
+	padding: 30px;
+	border-radius: 10px;
+	padding-left: 160px;
+	background: #fff url('../images/icon_vietcombank.png') top calc(50% + 30px) left 50px no-repeat;
+	background-size: 60px auto;
+	margin-bottom: 40px;
+}
+.pay-title {
+	text-align: center;
+	font-size: 24px;
+	font-weight: 600;
+	text-transform: uppercase;
+	position: relative;
+	margin-bottom: 20px;
+}
+.pay-box p {
+	margin-bottom: 10px;
+}
+.pay-box p:last-child {
+	margin-bottom: 0;
+}
+.pay-name {
+	color: var(--main-color);
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 1.2em;
+	text-transform: uppercase;
+}
+.pay-bank {
+	color: var(--main-color);
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 18px;
+}
+.pay-number, .pay-add {
+	font-style: italic;
+}
+.pay-number b {
+	font-size: 18px;
+}
+.under-block {
+	padding: 15px;
+	background: #fff;
+}
+.under-product {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	background: #fff;
+	padding: 15px 15px 5px 15px;
+	margin-bottom: 20px;
+}
+.under-product li {
+	max-width: 24%;
+	width: 100%;
+}
+.under-product a {
+	text-decoration: none;
+	color: var(--main-color);
+	text-align: right;
+	font-size: 16px;
+	font-weight: 600;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	display: block;
+	line-height: 1.4em;
+	padding: 10px;
+	margin-bottom: 10px;
+	position: relative;
+}
+.under-product a:hover {
+	border: 1px solid var(--main-color);
+}
+.under-product a span {
+	color: #333;
+	display: block;
+	font-size: 14px;
+}
+.under-product a::before {
+	position: absolute;
+	content: '';
+	width: 40px;
+	height: 40px;
+	top: calc(50% - 20px);
+	left: 10px;
+	border-radius: 50%;
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+.under-product a.Viettel::before {
+	background: url('../images/icon_viettel_sm.png') center no-repeat;
+	background-size: 24px;
+}
+.under-product a.Vietnamobile::before {
+	background: url('../images/icon_vietnamobile_sm.png') center no-repeat;
+	background-size: 24px;
+}
+.under-product a.Mobifone::before {
+	background: url('../images/icon_mobifone_sm.png') center no-repeat;
+	background-size: 24px;
+}
+.under-product a.Vinaphone::before {
+	background: url('../images/icon_vinaphone_sm.png') center no-repeat;
+	background-size: 24px;
+}
+.under-product a.Gmobile::before {
+	background: url('../images/icon_gmobile_sm.png') center no-repeat;
+	background-size: 24px;
+}
+.under-button {
+	margin: 0 auto;
+	max-width: 180px;
+	width: 100%;
+}
+.under-button a {
+	text-decoration: none;
+	color: #fff;
+	background: #fcaf17;
+	text-align: center;
+	display: block;
+	padding: 8px;
+	border: 1px solid #fcaf17;
+	border-radius: 3px;
+	transition: all 0.2s ease;
+}
+.under-button a:hover {
+	background: var(--main-color);
+	border: 1px solid var(--main-color);
+}
+.under-pagination {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+.under-pagination li {
+	margin: 0 5px;
+}
+.under-pagination a {
+    display: block;
+    background: var(--main-color);
+    color: #fff;
+    padding: 6px 14px;
+    line-height: 1.4em;
+    font-weight: 500;
+	text-align: center;
+	outline: none;
+	cursor: pointer;
+}
+.under-pagination li.active a {
+	background: #fcaf17;
+}
+.under-pagination li:not(.active) a:hover {
+	opacity: 0.7;
+}
+.under-title {
+	text-transform: uppercase;
+	background: var(--main-color);
+	color: #fff;
+	padding: 10px 20px 8px;
+	line-height: 1.4em;
+	margin: 0;
+	border-radius: 5px 5px 0 0;
+	font-weight: 600;
+}
+.under-label {
+	color: var(--main-color);
+	font-weight: 600;
+}
+.under-note {
+	color: #da282d;
+	font-style: italic;
+}
+.under-title.label-sim {
+	background: var(--main-color) url('../images/icon_sim.png') center left 15px no-repeat;
+	background-size: 14px auto;
+	padding-left: 40px;
+}
+.under-fill {
+	background: #fff;
+	padding: 15px 15px 5px 15px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.under-fill li {
+	max-width: 48%;
+	width: 100%;
+}
+.under-fill a {
+	text-decoration: none;
+	display: block;
+	font-weight: 700;
+	text-align: center;
+	border: 1px solid #ddd;
+	font-size: 12px;
+	margin-bottom: 10px;
+	border-radius: 3px;
+}
+.under-fill a:hover {
+	border: 1px solid var(--main-color);
+	color: var(--main-color);
+}
+.under-content .under-fill li {
+	max-width: 24%;
+}
+.under-content .under-fill a {
+	font-size: 14px;
+    padding: 4px;
+}
+.under-section {
+	margin-bottom: 30px;
+}
+.under-contact {
+	background: #fff;
+	padding: 15px;
+}
+.under-contact a {
+	display: block;
+	background: var(--main-color);
+	max-width: 75%;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+	padding: 10px;
+	font-size: 18px;
+	font-weight: 600;
+	margin: 0 auto;
+	border-radius: 3px;
+}
+.contact-date {
+	font-weight: 600;
+	font-size: 16px;
+	text-align: center;
+	margin-bottom: 15px;
+	line-height: 1.6em;
+	color: var(--main-color);
+}
+.contact-date span {
+	font-weight: 500;
+	font-size: 12px;
+	display: block;
+	color: #333;
+}
+.contact-support a {
+	background: #fcaf17;
+}
+.under-banner a {
+	display: block;
+	border-radius: 10px;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+.under-banner a:hover {
+	opacity: 0.7;
+}
+.under-news {
+	display: flex;
+	justify-content: space-between;
+	background: #fff;
+	padding: 15px;
+}
+.under-news li {
+	width: 24%;
+}
+.under-news a {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+}
+.under-news a:hover {
+	opacity: 0.7;
+}
+.under-news a span {
+	display: block;
+	text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: 600;
+	line-height: 1.4em;
+	margin-top: 15px;
+}
+.under-bank p {
+	line-height: 1.2em;
+	font-weight: 600;
+}
+.under-bank li {
+	margin-bottom: 30px;
+}
+.under-bank a {
+	text-decoration: none;
+	font-weight: 600;
+}
+.bank-title {
+	color: var(--main-color);
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+.under-order p {
+	line-height: 1.2em;
+}
+.under-order li:not(:last-child) {
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 20px;
+}
+.order-status {
+	padding: 10px;
+	color: #fff;
+	background: var(--main-color);
+	font-weight: 600;
+	border-radius: 10px;
+	text-align: center;
+}
+.order-status.confirmed {
+	background: #fcaf17;
+}
+.under-bank p:last-child, .under-bank li:last-child {
+	margin-bottom: 0;
+}
+#footer {
+	margin-top: 40px;
+	border-top: 1px solid var(--main-color);
+	background: #fff;
+}
+.foo-content {
+	padding: 40px 0;
+}
+.foo-info {
+	text-align: center;
+	max-width: 260px;
+}
+.foo-add {
+	font-size: 12px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+.foo-tel {
+	display: inline-block;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 1em;
+	color: var(--main-color);
+	margin-bottom: 20px;
+	padding-left: 30px;
+	background: url('../images/icon_tel.png') center left no-repeat;
+	background-size: 20px auto;
+}
+.foo-contact {
+	max-width: 260px;
+	width: 100%;
+	margin: 0 auto;
+}
+.foo-contact a {
+	display: block;
+	background: #fcaf17;
+	text-decoration: none;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+	padding: 10px;
+	border: 1px solid transparent;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+	transition: all 0.2s ease;
+}
+.foo-contact a:hover {
+	background: #fff;
+	color: #fcaf17;
+	border: 1px solid #fcaf17;
+}
+.foo-title {
+	font-size: 24px;
+	color: var(--main-color);
+	font-weight: 600;
+	display: inline-block;
+	border-bottom: 1px dashed #fcaf17;
+	margin-bottom: 15px;
+}
+.foo-list a {
+	text-decoration: none;
+	color: var(--main-color);
+	display: inline-block;
+	font-weight: 500;
+	padding-left: 20px;
+	background: linear-gradient(to right, #fcaf17 50%, #fcaf17 50%) top 14px left no-repeat;
+	background-size: 8px 2px;
+	margin-bottom: 10px;
+}
+.foo-list a:hover {
+	text-decoration: underline;
+}
+.foo-img p {
+	max-width: 200px;
+	width: 100%;
+}
+.copyright {
+	margin: 0;
+	background: var(--main-color);
+	padding: 10px;
+	color: #fff;
+	text-align: center;
+	font-size: 12px;
+	letter-spacing: 0.1em;
+}
+

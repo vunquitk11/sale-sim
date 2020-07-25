@@ -1,0 +1,64 @@
+
+{
+    "category": {
+        "title": "Sim theo loại",
+        "content": [
+            "Viettel",
+            "Mobifone",
+            "Vinaphone",
+            "Vietnamobile",
+            "Gmobile"
+        ]
+    },
+    "category-product" : {
+        "title": "Sim theo ý nghĩa",
+        "content": [
+            "Sim tứ quý",
+            "Sim ngũ quý",
+            "Sim lục quý",
+            "Sim thần tài",
+            "Sim tiến lên"
+        ]
+    },
+    "category-number" : {
+        "title": "Sim theo đầu số",
+        "content": [
+            "Sim 090",
+            "Sim 091",
+            "Sim 092",
+            "Sim 093",
+            "Sim 094"
+        ]
+    },
+    "category-price" : {
+        "title": "Sim theo khoảng giá",
+        "content": [
+            "Sim dưới 500 nghìn",
+            "Sim giá 500 - 1 triệu",
+            "Sim giá 1 - 3 triệu",
+            "Sim giá 3 - 5 triệu",
+            "Sim giá 5 - 10 triệu",
+            "Sim giá 10 - 50 triệu",
+            "Sim giá 50 - 100 triệu",
+            "Sim giá 100 - 200 triệu",
+            "Sim giá 200 - 500 triệu",
+            "Sim giá trên 500 triệu"
+        ]
+    },
+    "category-news" : {
+        "title": "Bạn cần biết",
+        "content": [
+            "Cam kết bán hàng",
+            "Kiểm tra thông tin",
+            "Hướng dẫn mua hàng",
+            "Kiểm tra sim hợp mệnh",
+            "Những điều cần biết về phong thủy"
+        ]
+    },
+    "menu-contact" : {
+        "title": "Thông tin liên hệ",
+        "content": [],
+        "contact": true
+    }
+}
+
