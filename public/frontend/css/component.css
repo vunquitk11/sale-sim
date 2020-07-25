@@ -132,7 +132,7 @@ body {
 }
 #mainvisual {
 	height: 400px;
-	background: url('../images/mainvisual.jpg') center no-repeat;
+	background: url('../../images/mainvisual.jpg') center no-repeat;
 	background-size: cover;
 }
 .sidebar {
@@ -191,7 +191,7 @@ body {
 .product-tbl a.promotion::before {
 	content: '';
 	position: absolute;
-	background: url(../images/icon_gift.png) center center no-repeat;
+	background: url(../../images/icon_gift.png) center center no-repeat;
 	background-size: 100% auto;
 	width: 15px;
     height: 15px;
@@ -202,23 +202,23 @@ body {
 	text-decoration: underline;
 }
 .product-tbl .Viettel {
-	background: #fff url('../images/icon_viettel.png') center center no-repeat;
+	background: #fff url('../../images/icon_viettel.png') center center no-repeat;
 	background-size: 80px auto;
 }
 .product-tbl .Vinaphone {
-	background: #fff url('../images/icon_vinaphone.png') center center no-repeat;
+	background: #fff url('../../images/icon_vinaphone.png') center center no-repeat;
 	background-size: 60px auto;
 }
 .product-tbl .Mobifone {
-	background: #fff url('../images/icon_mobifone.png') center center no-repeat;
+	background: #fff url('../../images/icon_mobifone.png') center center no-repeat;
 	background-size: 60px auto;
 }
 .product-tbl .Vietnamobile {
-	background:#fff  url('../images/icon_vietnamobile.png') center center no-repeat;
+	background:#fff  url('../../images/icon_vietnamobile.png') center center no-repeat;
 	background-size: 60px auto;
 }
 .product-tbl .Gmobile {
-	background: #fff url('../images/icon_gmobile.png') center center no-repeat;
+	background: #fff url('../../images/icon_gmobile.png') center center no-repeat;
 	background-size: 60px auto;
 }
 .product-tbl .stt, .product-tbl .product {
@@ -295,28 +295,28 @@ body {
 }
 .sim-information .sim-cate span:last-child {
 	display: inline-block;
-	background: url('../images/icon_viettel.png') center center no-repeat;
+	background: url('../../images/icon_viettel.png') center center no-repeat;
 	background-size: 60px auto;
 	padding: 25px 30px;
 }
 .sim-information .sim-cate.Mobifone span:last-child {
 	padding: 10px 30px;
-	background: url('../images/icon_mobifone.png') center center no-repeat;
+	background: url('../../images/icon_mobifone.png') center center no-repeat;
 	background-size: 60px auto;
 }
 .sim-information .sim-cate.Vinaphone span:last-child {
 	padding: 10px 30px;
-	background: url('../images/icon_vinaphone.png') center center no-repeat;
+	background: url('../../images/icon_vinaphone.png') center center no-repeat;
 	background-size: 60px auto;
 }
 .sim-information .sim-cate.Vietnamobile span:last-child {
 	padding: 15px 30px;
-	background: url('../images/icon_vietnamobile.png') center center no-repeat;
+	background: url('../../images/icon_vietnamobile.png') center center no-repeat;
 	background-size: 60px auto;
 }
 .sim-information .sim-cate.Gmobile span:last-child {
 	padding: 15px 30px;
-	background: url('../images/icon_gmobile.png') center center no-repeat;
+	background: url('../../images/icon_gmobile.png') center center no-repeat;
 	background-size: 60px auto;
 }
 .sim-information .promotion-title {
@@ -324,13 +324,13 @@ body {
 	font-weight: 700;
 	font-size: 18px;
 	text-transform: uppercase;
-	background: url('../images/icon_gift.png') top calc(50% - 2px) left no-repeat;
+	background: url('../../images/icon_gift.png') top calc(50% - 2px) left no-repeat;
 	background-size: 20px auto;
 	margin-bottom: 10px;
 }
 .sim-information .promotion-content p {
 	padding-left: 20px;
-	background: url('../images/icon_check.png') top 8px left no-repeat;
+	background: url('../../images/icon_check.png') top 8px left no-repeat;
 	background-size: 12px auto;
 	color: var(--main-color);
 }
@@ -358,7 +358,7 @@ body {
 	padding: 30px;
 	border-radius: 10px;
 	padding-left: 160px;
-	background: #fff url('../images/icon_vietcombank.png') top calc(50% + 30px) left 50px no-repeat;
+	background: #fff url('../../images/icon_vietcombank.png') top calc(50% + 30px) left 50px no-repeat;
 	background-size: 60px auto;
 	margin-bottom: 40px;
 }
@@ -445,23 +445,23 @@ body {
 	border-bottom: 1px solid #ddd;
 }
 .under-product a.Viettel::before {
-	background: url('../images/icon_viettel_sm.png') center no-repeat;
+	background: url('../../images/icon_viettel_sm.png') center no-repeat;
 	background-size: 24px;
 }
 .under-product a.Vietnamobile::before {
-	background: url('../images/icon_vietnamobile_sm.png') center no-repeat;
+	background: url('../../images/icon_vietnamobile_sm.png') center no-repeat;
 	background-size: 24px;
 }
 .under-product a.Mobifone::before {
-	background: url('../images/icon_mobifone_sm.png') center no-repeat;
+	background: url('../../images/icon_mobifone_sm.png') center no-repeat;
 	background-size: 24px;
 }
 .under-product a.Vinaphone::before {
-	background: url('../images/icon_vinaphone_sm.png') center no-repeat;
+	background: url('../../images/icon_vinaphone_sm.png') center no-repeat;
 	background-size: 24px;
 }
 .under-product a.Gmobile::before {
-	background: url('../images/icon_gmobile_sm.png') center no-repeat;
+	background: url('../../images/icon_gmobile_sm.png') center no-repeat;
 	background-size: 24px;
 }
 .under-button {
@@ -528,7 +528,7 @@ body {
 	font-style: italic;
 }
 .under-title.label-sim {
-	background: var(--main-color) url('../images/icon_sim.png') center left 15px no-repeat;
+	background: var(--main-color) url('../../images/icon_sim.png') center left 15px no-repeat;
 	background-size: 14px auto;
 	padding-left: 40px;
 }
@@ -699,7 +699,7 @@ body {
 	color: var(--main-color);
 	margin-bottom: 20px;
 	padding-left: 30px;
-	background: url('../images/icon_tel.png') center left no-repeat;
+	background: url('../../images/icon_tel.png') center left no-repeat;
 	background-size: 20px auto;
 }
 .foo-contact {
