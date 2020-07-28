@@ -5,14 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
+//Helper
+use App\Helpers\Pagination;
+
 //model
 use App\Brand;
 use App\Category;
 use App\Post;
 use App\User;
+use App\Sim;
 
 class PageAdminController extends Controller
 {
+    private $MAX_VALUE = 10;
     //index
     public function pageAdminDashboard(){
         return view('admin.index')->with([
@@ -56,6 +61,98 @@ class PageAdminController extends Controller
         return view('admin.user.update')->with([
             'url' => 'users',
             'result' => $user,
+        ]);
+    }
+
+    // $page = $request->query('page') ? $request->query('page') : 1;
+    // $number = $users->count();
+    // $totalPage = (int) ($number / $this->MAX_VALUE) + (($number % $this->MAX_VALUE) !== 0);
+    // $previousPage = ($page == 1) ? 1 : ($page - 1);
+    // $nextPage = ($page == $totalPage) ? $totalPage : ($page + 1);
+    // $listPages = Pagination::initArray($page, $totalPage);
+    // $users = $users->orderBy('created_at','DESC')->skip($this->MAX_VALUE * ($page - 1))->take($this->MAX_VALUE)->get();
+
+    // $fullUrl = explode('?', $_SERVER['REQUEST_URI']);
+    // $currUrl = $fullUrl[0];
+
+    // if($users){
+    //     return view('admin.user.users')->with([
+    //         'type' => $type,
+    //         'url' => $url,
+    //         'users' => $users,
+    //         'currUrl' => $currUrl,
+    //         'totalPage' => $totalPage,
+    //         'previousPage' => $previousPage,
+    //         'nextPage' => $nextPage,
+    //         'listPages' => $listPages,
+    //         'currPage' => $page,
+    //     ]);
+    // }
+
+    //sim
+    public function pageSims(Request $request){
+        $sims = Sim::where([]);
+        $page = $request->query('page') ? $request->query('page') : 1;
+        $number = $sims->count();
+        $totalPage = (int) ($number / 20) + (($number % 20) !== 0);
+        $previousPage = ($page == 1) ? 1 : ($page - 1);
+        $nextPage = ($page == $totalPage) ? $totalPage : ($page + 1);
+        $listPages = Pagination::initArray($page, $totalPage);
+        $sims = $sims->orderBy('created_at','DESC')->skip(20 * ($page - 1))->take(20)->get();
+
+        $fullUrl = explode('?', $_SERVER['REQUEST_URI']);
+        $currUrl = $fullUrl[0];
+
+        foreach($sims as $sim){
+            $brand = Brand::find($sim->brand_id);
+            $category = Category::find($sim->category_id);
+            if($brand && $category){
+                $sim['brand_name'] = $brand->name;
+                $sim['category_name'] = $category->name;
+            }
+        }
+
+        return view('admin.sim.show')->with([
+            'url' => 'sims',
+            'results' => $sims, 
+            'currUrl' => $currUrl,
+            'totalPage' => $totalPage,
+            'previousPage' => $previousPage,
+            'nextPage' => $nextPage,
+            'listPages' => $listPages,
+            'currPage' => $page,
+        ]);
+    }
+
+    public function pageCreateSim(){
+        $brands = Brand::where('status',1)->select('id','name','position')->orderBy('position','DESC')->get();
+        $categories = Category::where([
+            'type' => 0,
+            'status' => 1,
+        ])->select('id','name','position')->orderBy('position','DESC')->get();
+
+        return view('admin.sim.create')->with([
+            'url' => 'create-sim',
+            'brands' => $brands,
+            'categories' => $categories,
+        ]);
+    }
+
+    public function pageUpdateSim($id){
+        $brands = Brand::where('status',1)->select('id','name','position')->orderBy('position','DESC')->get();
+        $categories = Category::where([
+            'type' => 0,
+            'status' => 1,
+        ])->select('id','name','position')->orderBy('position','DESC')->get();
+
+        $sim = Sim::find($id);
+        if(!$sim) return redirect('/admin/sims')->with(['danger' => 'Something was wrong']);
+
+        return view('admin.sim.update')->with([
+            'url' => 'update-sim',
+            'result' => $sim,
+            'brands' => $brands,
+            'categories' => $categories,
         ]);
     }
 

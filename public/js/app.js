@@ -70432,127 +70432,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./public/frontend/images/idx_banner01.jpg":
-/*!*************************************************!*\
-  !*** ./public/frontend/images/idx_banner01.jpg ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/idx_banner01.jpg?fdc0297789dd752b2b5d90c75b9f28f4";
-
-/***/ }),
-
-/***/ "./public/frontend/images/idx_banner02.png":
-/*!*************************************************!*\
-  !*** ./public/frontend/images/idx_banner02.png ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/idx_banner02.png?b49256fb9d18ac4805e9b350fe09e888";
-
-/***/ }),
-
-/***/ "./public/frontend/images/idx_banner03.png":
-/*!*************************************************!*\
-  !*** ./public/frontend/images/idx_banner03.png ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/idx_banner03.png?5b3a4dbe70f3b1b65cadb2a7f2282c2c";
-
-/***/ }),
-
-/***/ "./public/frontend/images/idx_banner04.png":
-/*!*************************************************!*\
-  !*** ./public/frontend/images/idx_banner04.png ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/idx_banner04.png?dbc3f05d1e752a9c8f89728e780e1aab";
-
-/***/ }),
-
-/***/ "./public/frontend/images/under_img.jpg":
-/*!**********************************************!*\
-  !*** ./public/frontend/images/under_img.jpg ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/under_img.jpg?6deac929722db0caffdddd9573f9d210";
-
-/***/ }),
-
-/***/ "./resources/images/footer_img01.png":
-/*!*******************************************!*\
-  !*** ./resources/images/footer_img01.png ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/footer_img01.png?8353ae5a0cf39a22808c3f97ab95be94";
-
-/***/ }),
-
-/***/ "./resources/images/footer_img02.png":
-/*!*******************************************!*\
-  !*** ./resources/images/footer_img02.png ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/footer_img02.png?fd856d0d74973a62202d52f2d418de4a";
-
-/***/ }),
-
-/***/ "./resources/images/footer_logo.png":
-/*!******************************************!*\
-  !*** ./resources/images/footer_logo.png ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/footer_logo.png?c51d5e1104e1116773b8001c4dc80625";
-
-/***/ }),
-
-/***/ "./resources/images/header_logo.png":
-/*!******************************************!*\
-  !*** ./resources/images/header_logo.png ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/header_logo.png?774e0dbe7a5417ee256853e1eda3e84e";
-
-/***/ }),
-
-/***/ "./resources/images/idx_banner_top.png":
-/*!*********************************************!*\
-  !*** ./resources/images/idx_banner_top.png ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/idx_banner_top.png?29cf0172154e2fd4114f7dbb249654bc";
-
-/***/ }),
-
-/***/ "./resources/images/totop.png":
-/*!************************************!*\
-  !*** ./resources/images/totop.png ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/totop.png?10f0bae8e734c1e76fa35bfc307903dc";
-
-/***/ }),
-
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -70673,93 +70552,53 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Json_Data_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Json/Data.json */ "./resources/js/components/Json/Data.json");
 var _Json_Data_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../Json/Data.json */ "./resources/js/components/Json/Data.json", 1);
 /* harmony import */ var _small_component_IdxProduct_IdxProduct__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../small-component/IdxProduct/IdxProduct */ "./resources/js/components/small-component/IdxProduct/IdxProduct.jsx");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
- // import IdxProduct from '../../component/IdxProduct/IdxProduct';
 
 
 
-var Home = /*#__PURE__*/function (_Component) {
-  _inherits(Home, _Component);
 
-  var _super = _createSuper(Home);
-
-  function Home() {
-    _classCallCheck(this, Home);
-
-    return _super.apply(this, arguments);
-  }
-
-  _createClass(Home, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "under-section"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "under-title label-sim"
-      }, "T\u1EA5t c\u1EA3 sim"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_small_component_IdxProduct_IdxProduct__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        data: _Json_Data_json__WEBPACK_IMPORTED_MODULE_1__
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "under-button"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/sim/"
-      }, "Xem th\xEAm"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "under-section"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "under-title label-sim"
-      }, "Sim gi\xE1 r\u1EBB"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_small_component_IdxProduct_IdxProduct__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        data: _Json_Data_json__WEBPACK_IMPORTED_MODULE_1__
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "under-button"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/sim/sim-gia-re"
-      }, "Xem th\xEAm"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "under-section"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "under-title label-sim"
-      }, "Sim th\u1EA7n t\xE0i"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_small_component_IdxProduct_IdxProduct__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        data: _Json_Data_json__WEBPACK_IMPORTED_MODULE_1__
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "under-button"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/sim/sim-than-tai"
-      }, "Xem th\xEAm"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "under-section"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "under-title label-sim"
-      }, "Sim t\u1EE9 qu\xFD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_small_component_IdxProduct_IdxProduct__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        data: _Json_Data_json__WEBPACK_IMPORTED_MODULE_1__
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "under-button"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/sim/sim-tu-quy"
-      }, "Xem th\xEAm"))));
-    }
-  }]);
-
-  return Home;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+var Home = function Home() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "under-section"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "under-title label-sim"
+  }, "T\u1EA5t c\u1EA3 sim"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_small_component_IdxProduct_IdxProduct__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    data: _Json_Data_json__WEBPACK_IMPORTED_MODULE_1__
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "under-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/sim/"
+  }, "Xem th\xEAm"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "under-section"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "under-title label-sim"
+  }, "Sim gi\xE1 r\u1EBB"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_small_component_IdxProduct_IdxProduct__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    data: _Json_Data_json__WEBPACK_IMPORTED_MODULE_1__
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "under-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/sim/sim-gia-re"
+  }, "Xem th\xEAm"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "under-section"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "under-title label-sim"
+  }, "Sim th\u1EA7n t\xE0i"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_small_component_IdxProduct_IdxProduct__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    data: _Json_Data_json__WEBPACK_IMPORTED_MODULE_1__
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "under-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/sim/sim-than-tai"
+  }, "Xem th\xEAm"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "under-section"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "under-title label-sim"
+  }, "Sim t\u1EE9 qu\xFD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_small_component_IdxProduct_IdxProduct__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    data: _Json_Data_json__WEBPACK_IMPORTED_MODULE_1__
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "under-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/sim/sim-tu-quy"
+  }, "Xem th\xEAm"))));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
 
@@ -70841,19 +70680,19 @@ var listData01 = ["Sim lục quý", "Sim ngũ quý", "Sim tứ quý", "Sim tam h
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: __webpack_require__(/*! ../../../../public/frontend/images/idx_banner01.jpg */ "./public/frontend/images/idx_banner01.jpg")
+    src: "/images/idx_banner01.jpg"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: __webpack_require__(/*! ../../../../public/frontend/images/idx_banner02.png */ "./public/frontend/images/idx_banner02.png")
+    src: "/images/idx_banner02.png"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: __webpack_require__(/*! ../../../../public/frontend/images/idx_banner03.png */ "./public/frontend/images/idx_banner03.png")
+    src: "/images/idx_banner03.png"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: __webpack_require__(/*! ../../../../public/frontend/images/idx_banner04.png */ "./public/frontend/images/idx_banner04.png")
+    src: "/images/idx_banner04.png"
   }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "under-section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -71084,177 +70923,188 @@ var CustomerSupport = /*#__PURE__*/function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
+var Footer = function Footer() {
+  var scrollToTop = function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
 
-var Footer = /*#__PURE__*/function (_Component) {
-  _inherits(Footer, _Component);
-
-  var _super = _createSuper(Footer);
-
-  function Footer(props) {
-    var _this;
-
-    _classCallCheck(this, Footer);
-
-    _this = _super.call(this, props);
-    _this.state = {
-      is_visible: false
-    };
-    return _this;
-  }
-
-  _createClass(Footer, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var scrollComponent = this;
-      document.addEventListener("scroll", function (e) {
-        scrollComponent.toggleVisibility();
-      });
-      scrollComponent.scrollToTop();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
+    id: "footer"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "foo-content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-xl-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "foo-info"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "foo-logo"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "/images/footer_logo.png"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "foo-add"
+  }, "214 V\xF5 V\u0103n Ng\xE2n - Ph\u01B0\u1EDDng B\xECnh Th\u1ECD - Qu\u1EADn Th\u1EE7 \u0110\u1EE9c - TP. H\u1ED3 Ch\xED Minh."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "foo-tel"
+  }, "0979 225 443"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "foo-contact"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/contact"
+  }, "Li\xEAn h\u1EC7 v\u1EDBi ch\xFAng t\xF4i")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-xl-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "foo-title"
+  }, "Ch\xEDnh s\xE1ch"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "foo-list"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/general"
+  }, "Ch\xEDnh s\xE1ch chung")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/security"
+  }, "Ch\xEDnh s\xE1ch b\u1EA3o m\u1EADt")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/repay"
+  }, "Ch\xEDnh s\xE1ch \u0111\u1ED5i tr\u1EA3")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/condition"
+  }, "\u0110i\u1EC1u kho\u1EA3n & \u0110i\u1EC1u ki\u1EC7n")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/juridical"
+  }, "Gi\u1EA5y t\u1EDD ph\xE1p l\xFD")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-xl-3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "foo-title"
+  }, "H\u1ED7 tr\u1EE3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "foo-list"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/guideline"
+  }, "H\u1ED7 tr\u1EE3 mua sim")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/register"
+  }, "\u0110\u0103ng k\xFD th\xF4ng tin")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/pawn"
+  }, "Th\u1EE7 t\u1EE5c c\u1EA7m sim")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/installment"
+  }, "Th\u1EE7 t\u1EE5c tr\u1EA3 g\xF3p")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/procedure"
+  }, "Th\u1EE7 t\u1EE5c mua sim s\u1ED1 \u0111\u1EB9p")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-xl-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "foo-title"
+  }, "Ch\u1EE9ng nh\u1EADn"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "foo-img"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "http://online.gov.vn/",
+    target: "blank"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "/images/footer_img01.png"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "http://online.gov.vn/",
+    target: "blank"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "/images/footer_img02.png"
+  })))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    id: "totop",
+    onClick: function onClick() {
+      return scrollToTop();
     }
-  }, {
-    key: "toggleVisibility",
-    value: function toggleVisibility() {
-      // console.log(window.pageYOffset);
-      if (window.pageYOffset > 100) {
-        this.setState({
-          is_visible: true
-        });
-      } else {
-        this.setState({
-          is_visible: false
-        });
-      }
-    }
-  }, {
-    key: "scrollToTop",
-    value: function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this2 = this;
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "/images/totop.png",
+    alt: "to top"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "copyright"
+  }, "Copyright \xA9 GROUP CODE 4.0 All Rights Reserved."));
+};
 
-      var is_visible = this.state.is_visible;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
-        id: "footer"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "foo-content"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "row"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-xl-4"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "foo-info"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "foo-logo"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: __webpack_require__(/*! ../../../../images/footer_logo.png */ "./resources/images/footer_logo.png")
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "foo-add"
-      }, "214 V\xF5 V\u0103n Ng\xE2n - Ph\u01B0\u1EDDng B\xECnh Th\u1ECD - Qu\u1EADn Th\u1EE7 \u0110\u1EE9c - TP. H\u1ED3 Ch\xED Minh."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "foo-tel"
-      }, "0979 225 443"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "foo-contact"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/contact"
-      }, "Li\xEAn h\u1EC7 v\u1EDBi ch\xFAng t\xF4i")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-xl-3"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "foo-title"
-      }, "Ch\xEDnh s\xE1ch"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "foo-list"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/general"
-      }, "Ch\xEDnh s\xE1ch chung")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/security"
-      }, "Ch\xEDnh s\xE1ch b\u1EA3o m\u1EADt")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/repay"
-      }, "Ch\xEDnh s\xE1ch \u0111\u1ED5i tr\u1EA3")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/condition"
-      }, "\u0110i\u1EC1u kho\u1EA3n & \u0110i\u1EC1u ki\u1EC7n")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/juridical"
-      }, "Gi\u1EA5y t\u1EDD ph\xE1p l\xFD")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-xl-3"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "foo-title"
-      }, "H\u1ED7 tr\u1EE3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "foo-list"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/guideline"
-      }, "H\u1ED7 tr\u1EE3 mua sim")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/register"
-      }, "\u0110\u0103ng k\xFD th\xF4ng tin")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/pawn"
-      }, "Th\u1EE7 t\u1EE5c c\u1EA7m sim")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/installment"
-      }, "Th\u1EE7 t\u1EE5c tr\u1EA3 g\xF3p")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "/procedure"
-      }, "Th\u1EE7 t\u1EE5c mua sim s\u1ED1 \u0111\u1EB9p")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-xl-2"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "foo-title"
-      }, "Ch\u1EE9ng nh\u1EADn"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "foo-img"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "http://online.gov.vn/",
-        target: "blank"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: __webpack_require__(/*! ../../../../images/footer_img01.png */ "./resources/images/footer_img01.png")
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "http://online.gov.vn/",
-        target: "blank"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: __webpack_require__(/*! ../../../../images/footer_img02.png */ "./resources/images/footer_img02.png")
-      })))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        id: "totop",
-        onClick: function onClick() {
-          return _this2.scrollToTop();
-        },
-        className: is_visible && "show"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: __webpack_require__(/*! ../../../../images/totop.png */ "./resources/images/totop.png"),
-        alt: "to top"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "copyright"
-      }, "Copyright \xA9 GROUP CODE 4.0 All Rights Reserved."));
-    }
-  }]);
-
-  return Footer;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-/* harmony default export */ __webpack_exports__["default"] = (Footer);
+/* harmony default export */ __webpack_exports__["default"] = (Footer); //Footer cua Nhat
+// class Footer extends Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//           is_visible: false
+//         };
+//     }
+//     componentDidMount() {
+//         let scrollComponent = this;
+//         document.addEventListener("scroll", function(e) {
+//             scrollComponent.toggleVisibility();
+//         });
+//         scrollComponent.scrollToTop();
+//     }
+//     toggleVisibility() {
+//         if (window.pageYOffset > 100) {
+//           this.setState({
+//             is_visible: true
+//           });
+//         } else {
+//           this.setState({
+//             is_visible: false
+//           });
+//         }
+//     }
+//     scrollToTop() {
+//         window.scrollTo({
+//             top: 0,
+//             behavior: "smooth"
+//         });
+//     }
+//     render() {
+//         // console.log('VISIBLE',is_visible);
+//         const { is_visible } = this.state;
+//         return (
+//             <footer id="footer">
+//                 <div className="container">
+//                     <div className="foo-content">
+//                         <div className="row">
+//                             <div className="col-xl-4">
+//                                 <div className="foo-info">
+//                                     <p className="foo-logo"><a href="/"><img src='/images/footer_logo.png'/></a></p>
+//                                     <p className="foo-add">214 Võ Văn Ngân - Phường Bình Thọ - Quận Thủ Đức - TP. Hồ Chí Minh.</p>
+//                                     <p className="foo-tel">0979 225 443</p>
+//                                     <p className="foo-contact"><a href="/contact">Liên hệ với chúng tôi</a></p>
+//                                 </div>
+//                             </div>
+//                             <div className="col-xl-3">
+//                                 <p className="foo-title">Chính sách</p>
+//                                 <ul className="foo-list">
+//                                     <li><a href="/general">Chính sách chung</a></li>
+//                                     <li><a href="/security">Chính sách bảo mật</a></li>
+//                                     <li><a href="/repay">Chính sách đổi trả</a></li>
+//                                     <li><a href="/condition">Điều khoản &amp; Điều kiện</a></li>
+//                                     <li><a href="/juridical">Giấy tờ pháp lý</a></li>
+//                                 </ul>
+//                             </div>
+//                             <div className="col-xl-3">
+//                                 <p className="foo-title">Hỗ trợ</p>
+//                                 <ul className="foo-list">
+//                                     <li><a href="/guideline">Hỗ trợ mua sim</a></li>
+//                                     <li><a href="/register">Đăng ký thông tin</a></li>
+//                                     <li><a href="/pawn">Thủ tục cầm sim</a></li>
+//                                     <li><a href="/installment">Thủ tục trả góp</a></li>
+//                                     <li><a href="/procedure">Thủ tục mua sim số đẹp</a></li>
+//                                 </ul>
+//                             </div>
+//                             <div className="col-xl-2">
+//                                 <p className="foo-title">Chứng nhận</p>
+//                                 <div className="foo-img">
+//                                     <p><a href="http://online.gov.vn/" target="blank"><img src='/images/footer_img01.png'/></a></p>
+//                                     <p><a href="http://online.gov.vn/" target="blank"><img src='/images/footer_img02.png'/></a></p>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//                 <p id="totop" onClick={() => this.scrollToTop()} className={is_visible && ("show")}><img src='/images/totop.png' alt="to top" /></p>
+//                 <p className="copyright">Copyright &copy; GROUP CODE 4.0 All Rights Reserved.</p>
+//             </footer>
+//         );
+//     }
+// }
+// export default Footer;
 
 /***/ }),
 
@@ -71322,11 +71172,11 @@ var Header = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: __webpack_require__(/*! ../../../../images/header_logo.png */ "./resources/images/header_logo.png")
+        src: "/images/header_logo.png"
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "header-banner"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: __webpack_require__(/*! ../../../../images/idx_banner_top.png */ "./resources/images/idx_banner_top.png")
+        src: "/images/idx_banner_top.png"
       }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navigation_Navigation__WEBPACK_IMPORTED_MODULE_1__["default"], null));
     }
   }]);
@@ -71389,7 +71239,7 @@ var IdxProduct = /*#__PURE__*/function (_Component) {
     value: function render() {
       var renderItem = this.props.data.map(function (Item, index) {
         return index < 20 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: Item
+          key: index
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: "/info/" + Item.simNumber,
           className: Item.category
@@ -71607,19 +71457,19 @@ var News = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/news/xxx"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: __webpack_require__(/*! ../../../../../public/frontend/images/under_img.jpg */ "./public/frontend/images/under_img.jpg")
+        src: "/images/under_img.jpg"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u0110\u1ECBa ch\u1EC9 mua sim s\u1ED1 \u0111\u1EB9p t\u1EA1i TPHCM"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/news/xxx"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: __webpack_require__(/*! ../../../../../public/frontend/images/under_img.jpg */ "./public/frontend/images/under_img.jpg")
+        src: "/images/under_img.jpg"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u0110\u1ECBa ch\u1EC9 mua sim s\u1ED1 \u0111\u1EB9p t\u1EA1i TPHCM"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/news/xxx"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: __webpack_require__(/*! ../../../../../public/frontend/images/under_img.jpg */ "./public/frontend/images/under_img.jpg")
+        src: "/images/under_img.jpg"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u0110\u1ECBa ch\u1EC9 mua sim s\u1ED1 \u0111\u1EB9p t\u1EA1i TPHCM"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "/news/xxx"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: __webpack_require__(/*! ../../../../../public/frontend/images/under_img.jpg */ "./public/frontend/images/under_img.jpg")
+        src: "/images/under_img.jpg"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "\u0110\u1ECBa ch\u1EC9 mua sim s\u1ED1 \u0111\u1EB9p t\u1EA1i TPHCM"))));
     }
   }]);

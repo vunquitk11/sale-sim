@@ -164,17 +164,17 @@ $('.btn-delete-role-from-moderator').click(function() {
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
-        confirmButtonText: "Có",
-        cancelButtonText: "Không",
+        confirmButtonText: "Yes",
+        cancelButtonText: "No",
         closeOnConfirm: false,
         closeOnCancel: false
     },
     function(isConfirm) {
         if (isConfirm) {
             swal("Đã xóa!", "Đã xóa.", "success");
-            window.location.href = "/admin/delete-role-from-moderator/" + id;
+            window.location.href = "/admin/delete-user/" + id;
         } else {
-            swal("Action cancelled", "Stop deleting role from moderator", "error");
+            swal("Action cancelled", "Stop deleting item", "error");
         }
     });
 });

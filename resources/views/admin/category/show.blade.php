@@ -147,17 +147,17 @@ div.dataTables_wrapper div.dataTables_filter label {
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Có",
-                cancelButtonText: "Không",
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
                 closeOnConfirm: false,
                 closeOnCancel: false
             },
             function(isConfirm) {
                 if (isConfirm) {
-                    swal("Đã xóa!", "Đã xóa video.", "success");
+                    swal("Deleted!", "Deleted item.", "success");
                     window.location.href = "/admin/delete-category/" + id;
                 } else {
-                    swal("Action cancelled", "Stop deleting video", "error");
+                    swal("Action cancelled", "Stop deleting item", "error");
                 }
             });
     });

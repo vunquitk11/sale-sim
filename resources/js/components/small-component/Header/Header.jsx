@@ -9,7 +9,7 @@ class Header extends Component {
                     <div className="container">
                         <div className="header-content">
                             <p className="header-logo"><a href="/"><img src='/images/header_logo.png' /></a></p>
-                            <p className="header-banner"><img src={require('../../../../images/idx_banner_top.png')} /></p>
+                            <p className="header-banner"><img src='/images/idx_banner_top.png' /></p>
                         </div>
                     </div>
                 </div>

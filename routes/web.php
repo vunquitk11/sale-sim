@@ -41,6 +41,13 @@ Route::group([
         Route::post('/create-user','AdminController@postCreateUser');
         Route::post('/update-user/{id}','AdminController@postUpdateUser');
 
+        //sim
+        Route::get('/sims','PageAdminController@pageSims');
+        Route::get('/create-sim','PageAdminController@pageCreateSim');
+        Route::post('/create-sim','AdminController@postCreateSim');
+        Route::get('/update-sim/{id}','PageAdminController@pageUpdateSim');
+        Route::post('/update-sim/{id}','AdminController@postUpdateSim');
+
         //brand
         Route::get('/brands','PageAdminController@pageBrands');
         Route::get('/create-brand','PageAdminController@pageCreateBrand');

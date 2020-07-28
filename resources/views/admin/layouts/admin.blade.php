@@ -76,12 +76,12 @@
                             <li><a href="/admin/logs">System log</a></li>
                         </ul>
                     </li> --}}
-                    <li class="{{($url == 'brands' || $url == 'create-brand') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa brand">
+                    <li class="{{($url == 'sims' || $url == 'create-sim') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa sim">
                         <a><i class="fa fa-credit-card-alt ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Sim</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li class="{{($url == 'brands') ? 'active' : ''}}"><a href="/admin/brands">Danh sách Sim</a></li>
-                            <li class="{{($url == 'create-brand') ? 'active' : ''}}"><a href="/admin/create-brand">Thêm Sim</a></li>
-                            <li class="{{($url == 'create-brand') ? 'active' : ''}}"><a href="/admin/create-brand">Trích xuất</a></li>
+                            <li class="{{($url == 'sims') ? 'active' : ''}}"><a href="/admin/sims">Danh sách Sim</a></li>
+                            <li class="{{($url == 'create-sim') ? 'active' : ''}}"><a href="/admin/create-sim">Thêm Sim</a></li>
+                            <li class="{{($url == 'analystic-sim') ? 'active' : ''}}"><a href="/admin/create-sim">Trích xuất</a></li>
                         </ul>
                     </li>
                     <li class="{{($url == 'categories' || $url == 'create-category') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa Category">

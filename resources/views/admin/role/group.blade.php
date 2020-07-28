@@ -162,8 +162,8 @@ $('.btn-delete-role').click(function() {
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
-        confirmButtonText: "Có",
-        cancelButtonText: "Không",
+        confirmButtonText: "Yes",
+        cancelButtonText: "No",
         closeOnConfirm: false,
         closeOnCancel: false
     },

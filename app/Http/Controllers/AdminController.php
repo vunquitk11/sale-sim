@@ -10,6 +10,7 @@ use App\User;
 use App\Brand;
 use App\Category;
 use App\Post;
+use App\Sim;
 //helper
 use App\Helpers\UploadFile;
 use App\Helpers\AdminHelper;
@@ -96,6 +97,47 @@ class AdminController extends Controller
         return redirect('/admin/users')->with(['success' => 'Update success']);
     }
 
+    public function postCreateSim(Request $request){
+        if(!$request->phone || !$request->price || !$request->brand_id || !$request->category_id) return redirect()->back()->with(['danger' => 'Something was wrong']);
+        $brand = Brand::find($request->brand_id);
+        $category = Category::find($request->category_id);
+        if(!$brand || !$category) return redirect()->back()->with(['danger' => 'Something was wrong']);
+
+        $sim = new Sim();
+        // $sim->create($request->all());
+        $sim->phone = $request->phone;
+        $sim->price = $request->price;
+        $sim->description = $request->description;
+        // $sim->images = $request->images;
+        $sim->category_id = $request->category_id;
+        $sim->brand_id = $request->brand_id;
+        $sim->visible = $request->visible;
+        $sim->save();
+
+        return redirect('/admin/sims')->with(['success' => 'Create success']);
+    }
+
+    public function postUpdateSim($id,Request $request){
+        if(!$request->phone || !$request->price || !$request->brand_id || !$request->category_id) return redirect()->back()->with(['danger' => 'Something was wrong']);
+        $brand = Brand::find($request->brand_id);
+        $category = Category::find($request->category_id);
+        if(!$brand || !$category) return redirect()->back()->with(['danger' => 'Something was wrong']);
+
+        $sim = Sim::find($id);
+        $sim->phone = $request->phone;
+        $sim->price = $request->price;
+        $sim->description = $request->description;
+        $sim->category_id = $request->category_id;
+        $sim->brand_id = $request->brand_id;
+        $sim->visible = $request->visible;
+        if($request->images){
+            //do something to upload images
+        }
+        $sim->save();
+
+        return redirect('/admin/sims')->with(['success' => 'Update success']);
+    }
+
     //brand
     public function postCreateBrand(Request $request){
         if(!$request->name || !$request->image) return redirect()->back()->with(['danger' => 'Something was wrong']);
@@ -156,7 +198,7 @@ class AdminController extends Controller
         $request->status ? $category->status = $request->status : '';
         $request->position ? $category->position = $request->position : '';
         $request->name ? $category->slug = AdminHelper::createSlug($request->name) : '';
-        $request->description ? $category->description = $request->description : '';
+        $category->description = $request->description;
         $category->save();
 
         return redirect('/admin/categories')->with(['success' => 'Update success']);

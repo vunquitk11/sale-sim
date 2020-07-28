@@ -66,10 +66,10 @@ export default ({children}) => (
                     </div>
                     <div className="under-section">
                         <ul className="under-banner">
-                            <li><a href="#"><img src={require("../../../../public/frontend/images/idx_banner01.jpg")} /></a></li>
-                            <li><a href="#"><img src={require("../../../../public/frontend/images/idx_banner02.png")} /></a></li>
-                            <li><a href="#"><img src={require("../../../../public/frontend/images/idx_banner03.png")} /></a></li>
-                            <li><a href="#"><img src={require("../../../../public/frontend/images/idx_banner04.png")} /></a></li>
+                            <li><a href="#"><img src='/images/idx_banner01.jpg'/></a></li>
+                            <li><a href="#"><img src='/images/idx_banner02.png'/></a></li>
+                            <li><a href="#"><img src='/images/idx_banner03.png'/></a></li>
+                            <li><a href="#"><img src='/images/idx_banner04.png'/></a></li>
                         </ul>
                     </div>
                     <div className="under-section">

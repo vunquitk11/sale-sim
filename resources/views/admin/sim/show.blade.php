@@ -1,5 +1,5 @@
 @extends('admin.layouts.admin')
-<title>Danh sách Post category</title>
+<title>Danh sách sim</title>
 @section('header')
 <link href="{{ asset('frontend/css/plugins/chosen/bootstrap-chosen.css') }}" rel="stylesheet">
 <!-- <link href="{{ asset('frontend/css/plugins/summernote/summernote.css') }}" rel="stylesheet"> -->
@@ -22,16 +22,16 @@ div.dataTables_wrapper div.dataTables_filter label {
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
-        <h2>Danh sách Post category</h2>
+        <h2>Danh sách sim</h2>
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="/admin">Home</a>
             </li>
             <li class="breadcrumb-item">
-                <a href="/admin">Quản lí Post category</a>
+                <a href="/admin">Quản lí sim</a>
             </li>
             <li class="breadcrumb-item active">
-                <strong>Danh sách Post category</strong>
+                <strong>Danh sách sim</strong>
             </li>
         </ol>
     </div>
@@ -52,9 +52,6 @@ div.dataTables_wrapper div.dataTables_filter label {
                                         <tr>
                                             <th style="width:5%;">#</th>
                                             <th style="width:20%;">Tên</th>
-                                            <th style="width:20%;">Mô tả</th>
-                                            <th style="width:20%;">Số lượng bài viết</th>
-                                            <th style="width:10%;">Ưu tiên</th>
                                             <th style="width:10%;">Trạng thái</th>
                                             <th style="width:15%;">Action</th>
                                         </tr>
@@ -67,19 +64,16 @@ div.dataTables_wrapper div.dataTables_filter label {
                                         @foreach ($results as $result)
                                             <tr>
                                                 <td>{{$i += 1}}</td>
-                                                <td>{{$result->name ? $result->name : 'Undefined'}}</td>           
-                                                <td>{!!$result->description!!}</td>    
-                                                <td>0</td>       
-                                                <td>{{$result->position}}</td>       
+                                                <td>{{$result->phone ? $result->phone : 'Undefined'}}</td>           
                                                 <td>     
-                                                    @if($result->status == 0)                                             
+                                                    @if($result->visible == 0)                                             
                                                     <button class="btn btn-warning btn-custom" data-id="{{$result->id}}" style="width: 6rem;background-color: #F3CE0D;">Disable</button>
                                                     @else
                                                     <button class="btn btn-success btn-custom" data-id="{{$result->id}}" style="width: 6rem;">Activate</button>
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <a href="/admin/update-category/{{$result->id}}" class="btn btn-primary btn-custom" style="background-color: #1EB0BB;">Cập nhật</a>
+                                                    <a href="/admin/update-sim/{{$result->id}}" class="btn btn-primary btn-custom" style="background-color: #1EB0BB;">Cập nhật</a>
                                                     @if($result->count > 0)
                                                         <button class="btn btn-danger btn-custom btn-delete" style="width: 6rem;" disabled>Xóa</button>
                                                     @else
@@ -91,6 +85,24 @@ div.dataTables_wrapper div.dataTables_filter label {
                                     @endif
                                     </tbody>
                                 </table>
+                                <div class="pagination">
+                                    @if ($currPage > 1)
+                                    <a class="pagination-custom" href="{{$currUrl}}?page={{$previousPage}}">&laquo;</a>
+                                    @endif
+
+                                    @foreach ($listPages as $page)
+
+                                    @if($page!= '...')
+                                <a class="pagination-custom" style="background-color:{{$page==$currPage ? '#1EB0BB' : 'white'}};" href="{{$currUrl}}?page={{$page}}">{{$page}}</a>
+                                    @else
+                                    <a class="pagination-custom" >{{$page}}</a>
+                                    @endif
+
+                                    @endforeach
+
+                                    @if ($currPage < $totalPage) <a class="pagination-custom 4" href="{{$currUrl}}?page={{$nextPage}}">&raquo;</a>
+                                        @endif
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -114,28 +126,12 @@ div.dataTables_wrapper div.dataTables_filter label {
 <script>
     $(document).ready(function() {
         $('.dataTables').DataTable({
-            pageLength: 10,
+            pageLength: 20,
             responsive: true,
             dom: '<"html5buttons"B>lTfgitp',
             buttons: [],
-            stateSave: true //save the state before reload
+            stateSave: true 
         });
-        // $('#select-type').on('change', function (e) {
-        //     var select = $('#select-type').val();
-        //     var type = 'all';
-        //     if(select ==1){
-        //         var type = 'all';
-        //     }else if(select == 2){
-        //         var type = 'undisable';
-        //     }else if(select == 3){
-        //         var type = 'disable';
-        //     }else if(select == 4){
-        //         var type = 'paid';
-        //     }else if(select == 5){
-        //         var type = 'free';
-        //     }
-        //     window.location='/admin/videos/'+ type;
-        // });
     });
 </script>
 <script>
@@ -155,7 +151,7 @@ div.dataTables_wrapper div.dataTables_filter label {
             function(isConfirm) {
                 if (isConfirm) {
                     swal("Deleted!", "Deleted item.", "success");
-                    window.location.href = "/admin/delete-book/" + id;
+                    window.location.href = "/admin/delete-sim/" + id;
                 } else {
                     swal("Action cancelled", "Stop deleting item", "error");
                 }
