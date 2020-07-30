@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState,useEffect,useContext} from 'react';
 import ListFilter from '../small-component/ListFilter/ListFilter';
 import CustomerSupport from '../small-component/CustomerSupport/CustomerSupport';
 import News from '../small-component/News/News';
 import Bank from '../small-component/Bank/Bank';
 import Order from '../small-component/Order/Order';
+import {MainContext} from '../Master'
 const listData = [
     "Sim dưới 500K",
     "Sim giá 500K - 1tr",
@@ -38,15 +39,33 @@ const listData01 = [
     "Sim năm sinh",
     "Sim phong thủy",
 ]
-export default ({children}) => (
-    <main id="main">
+
+const MainLayout = ({children}) => {
+
+    //data
+    const [categories,setCategories] = useState([]);
+
+    //context
+    const {loadData} = useContext(MainContext)
+
+    const loadCategories = async () => {
+        var res = await loadData('categories',0);
+        setCategories(res.message === 'success' ? res.results : []);
+    }
+
+    useEffect(() => {
+        loadCategories();
+    },[]);
+
+    return (
+        <main id="main">
         <div className="container">
             <div className="row">
                 <div className="main-content col-xl-8">
                     <div className="under-section">
-                        <p className="under-title label-sim">Sim đặc biệt</p>
+                        <p className="under-title label-sim">Danh mục sim</p>
                         <div className="under-content">
-                            <ListFilter data={listData01}></ListFilter>
+                            <ListFilter data={categories || []}></ListFilter>
                         </div>
                     </div>
                     {children}
@@ -88,4 +107,7 @@ export default ({children}) => (
             </div>
         </div>
     </main>
-);
+    )
+}
+
+export default MainLayout

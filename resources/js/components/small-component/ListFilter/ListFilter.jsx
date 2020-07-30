@@ -1,16 +1,20 @@
-import React, { Component } from 'react';
+import React, {useState,useEffect} from 'react';
+import { Link } from 'react-router-dom';
 
-class ListFilter extends Component {
-    render() {
-        const renderItem = this.props.data.map((Item, index) => 
-            <li key={Item}><a href="/sim/xxx">{Item}</a></li>
-        );
-        return (
-            <ul className="under-fill">
-                {renderItem}
-            </ul>
-        );
-    }
+const ListFilter = ({data}) => {
+    return(
+        <ul className="under-fill">
+            {
+                data.map((item,index) => {
+                    return(
+                        <li key={index}>
+                        <Link to={`/product/${item.slug || 'null'}`}>{item.name || 'NULL'}</Link>
+                        </li>
+                    ) 
+                })
+            }
+        </ul>
+    )
 }
 
 export default ListFilter;

@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 
-class IdxProduct extends Component {
-    render() {
-        const renderItem = this.props.data.map((Item, index) => {
-            return index < 20 ? <li key={index}><a href={"/info/" + Item.simNumber} className={Item.category}>{Item.simNumber}<span>{Item.price}&nbsp;₫</span></a></li> : null
-        });
-        return (
-            <ul className="under-product">
-                {renderItem}
-            </ul>
-        );
-    }
+const IdxProduct = ({data}) => {
+    console.log(data);
+    return(
+        <ul className="under-product">
+            {
+                data.map((item,index) => {
+                    return(
+                        <li key={index} className="list_sim_item_V">
+                            <img className="brand_image_V" src={item.brand_image || 'NULL'}/>
+                            <div>
+                                <p>{item.phone || 'NULL'}</p>
+                                <p>{item.price} VND</p>
+                            </div>
+                        </li> 
+                    ) 
+                })
+            }
+        </ul>
+    )
 }
 
 export default IdxProduct;

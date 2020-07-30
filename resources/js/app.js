@@ -12,4 +12,5 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+require('./main.js');
 require('./components/Master.jsx');
