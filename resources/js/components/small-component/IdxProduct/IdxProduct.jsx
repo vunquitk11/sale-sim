@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 const IdxProduct = ({data}) => {
-    console.log(data);
     return(
         <ul className="under-product">
             {

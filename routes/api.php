@@ -23,5 +23,6 @@ Route::group([
 ], function () {
     Route::get('/categories', 'Api\PageController@getCategories');
     Route::get('/highlight-sim', 'Api\PageController@getHighlightSim');
+    Route::get('/price-type','Api\PageController@getPriceType');
 });
 

@@ -105,6 +105,13 @@
                             <li class="{{($url == 'create-blog-category') ? 'active' : ''}}"><a href="/admin/create-blog-category">Thêm Post category</a></li>
                         </ul>
                     </li>
+                    <li class="{{($url == 'price-types' || $url == 'create-price-type') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa price type">
+                        <a><i class="fa fa-list ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Price type</span><span class="fa fa-caret-down"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li class="{{($url == 'price-types') ? 'active' : ''}}"><a href="/admin/price-types">Danh sách Price type</a></li>
+                            <li class="{{($url == 'create-price-type') ? 'active' : ''}}"><a href="/admin/create-price-type">Thêm Price type</a></li>
+                        </ul>
+                    </li>
                     <li class="{{($url == 'posts' || $url == 'create-post') ? 'active' : ''}} toggle-border-bottom" data-toggle="tooltip" title="Thêm/Xóa/Sửa post category">
                         <a><i class="fa fa-newspaper-o ul-header" aria-hidden="true"></i> <span class="nav-label ul-header">Post</span><span class="fa fa-caret-down"></span></a>
                         <ul class="nav nav-second-level collapse">

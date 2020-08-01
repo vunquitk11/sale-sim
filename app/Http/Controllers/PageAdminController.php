@@ -271,4 +271,20 @@ class PageAdminController extends Controller
             'categories' => $categories,
         ]);
     }
+
+    //price category
+    public function pageCreatePriceType(){
+        return view('admin.price_category.create')->with([
+            'url' => 'create-price-category',
+        ]);
+    }
+
+    public function pageUpdateCreatePriceType($slug){
+        $result = PriceType::where('slug',$slug)->first();
+        if(!$result) return redirect('/admin/price-types')->with(['danger' => 'Something was wrong',]);
+        return view('admin.price_type.update')->with([
+            'url' => 'update-price-type',
+            'result' => $result,
+        ]);
+    }
 }

@@ -71434,11 +71434,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _small_component_ListFilter_ListFilter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../small-component/ListFilter/ListFilter */ "./resources/js/components/small-component/ListFilter/ListFilter.jsx");
-/* harmony import */ var _small_component_CustomerSupport_CustomerSupport__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../small-component/CustomerSupport/CustomerSupport */ "./resources/js/components/small-component/CustomerSupport/CustomerSupport.jsx");
-/* harmony import */ var _small_component_News_News__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../small-component/News/News */ "./resources/js/components/small-component/News/News.jsx");
-/* harmony import */ var _small_component_Bank_Bank__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../small-component/Bank/Bank */ "./resources/js/components/small-component/Bank/Bank.jsx");
-/* harmony import */ var _small_component_Order_Order__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../small-component/Order/Order */ "./resources/js/components/small-component/Order/Order.jsx");
-/* harmony import */ var _Master__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Master */ "./resources/js/components/Master.jsx");
+/* harmony import */ var _small_component_ListFilter_ListFilterPriceType_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../small-component/ListFilter/ListFilterPriceType.jsx */ "./resources/js/components/small-component/ListFilter/ListFilterPriceType.jsx");
+/* harmony import */ var _small_component_CustomerSupport_CustomerSupport__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../small-component/CustomerSupport/CustomerSupport */ "./resources/js/components/small-component/CustomerSupport/CustomerSupport.jsx");
+/* harmony import */ var _small_component_News_News__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../small-component/News/News */ "./resources/js/components/small-component/News/News.jsx");
+/* harmony import */ var _small_component_Bank_Bank__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../small-component/Bank/Bank */ "./resources/js/components/small-component/Bank/Bank.jsx");
+/* harmony import */ var _small_component_Order_Order__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../small-component/Order/Order */ "./resources/js/components/small-component/Order/Order.jsx");
+/* harmony import */ var _Master__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Master */ "./resources/js/components/Master.jsx");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -71464,7 +71465,19 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var listData = ["Sim dưới 500K", "Sim giá 500K - 1tr", "Sim giá 1tr - 3tr", "Sim giá 3tr - 5tr", "Sim giá 5tr - 10tr", "Sim giá 10tr - 20tr", "Sim giá 20tr - 30tr", "Sim giá 30tr - 50tr", "Sim giá 50tr - 100tr", "Sim trên 100tr"];
+ // const listData = [
+//     "Sim dưới 500K",
+//     "Sim giá 500K - 1tr",
+//     "Sim giá 1tr - 3tr",
+//     "Sim giá 3tr - 5tr",
+//     "Sim giá 5tr - 10tr",
+//     "Sim giá 10tr - 20tr",
+//     "Sim giá 20tr - 30tr",
+//     "Sim giá 30tr - 50tr",
+//     "Sim giá 50tr - 100tr",
+//     "Sim trên 100tr",
+// ]
+
 var listData01 = ["Sim lục quý", "Sim ngũ quý", "Sim tứ quý", "Sim tam hoa", "Sim taxi", "Sim lộc phát", "Sim số lặp", "Sim số gánh", "Sim số tiến", "Sim số kép", "Sim số đảo", "Sim thần tài", "Sim ông địa", "Sim đầu cổ", "Sim trả sau", "Sim giá rẻ", "Sim trả góp", "Sim VIP", "Sim năm sinh", "Sim phong thủy"];
 
 var MainLayout = function MainLayout(_ref) {
@@ -71474,10 +71487,15 @@ var MainLayout = function MainLayout(_ref) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
       _useState2 = _slicedToArray(_useState, 2),
       categories = _useState2[0],
-      setCategories = _useState2[1]; //context
+      setCategories = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      priceType = _useState4[0],
+      setPriceType = _useState4[1]; //context
 
 
-  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_Master__WEBPACK_IMPORTED_MODULE_7__["MainContext"]),
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_Master__WEBPACK_IMPORTED_MODULE_8__["MainContext"]),
       loadData = _useContext.loadData;
 
   var loadCategories = /*#__PURE__*/function () {
@@ -71507,8 +71525,36 @@ var MainLayout = function MainLayout(_ref) {
     };
   }();
 
+  var loadPriceType = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+      var res;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return loadData('price-type', 0);
+
+            case 2:
+              res = _context2.sent;
+              setPriceType(res.message === 'success' ? res.results : []);
+
+            case 4:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function loadPriceType() {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     loadCategories();
+    loadPriceType();
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("main", {
     id: "main"
@@ -71530,18 +71576,18 @@ var MainLayout = function MainLayout(_ref) {
     className: "under-section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
     className: "under-title label-sim"
-  }, "Tin t\u1EE9c & khuy\u1EBFn m\xE3i"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_small_component_News_News__WEBPACK_IMPORTED_MODULE_4__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  }, "Tin t\u1EE9c & khuy\u1EBFn m\xE3i"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_small_component_News_News__WEBPACK_IMPORTED_MODULE_5__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "main-right col-xl-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "under-section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
     className: "under-title center"
-  }, "H\u1ED7 tr\u1EE3 kh\xE1ch h\xE0ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_small_component_CustomerSupport_CustomerSupport__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  }, "H\u1ED7 tr\u1EE3 kh\xE1ch h\xE0ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_small_component_CustomerSupport_CustomerSupport__WEBPACK_IMPORTED_MODULE_4__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "under-section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
     className: "under-title center"
-  }, "Sim theo gi\xE1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_small_component_ListFilter_ListFilter__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    data: listData
+  }, "Sim theo gi\xE1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_small_component_ListFilter_ListFilterPriceType_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    data: priceType || []
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "under-section"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
@@ -71568,13 +71614,13 @@ var MainLayout = function MainLayout(_ref) {
     className: "under-title center"
   }, "T\xE0i kho\u1EA3n ng\xE2n h\xE0ng"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "under-block"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_small_component_Bank_Bank__WEBPACK_IMPORTED_MODULE_5__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_small_component_Bank_Bank__WEBPACK_IMPORTED_MODULE_6__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "under-order"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", {
     className: "under-title center"
   }, "\u0110\u01A1n h\xE0ng m\u1EDBi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "under-block"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_small_component_Order_Order__WEBPACK_IMPORTED_MODULE_6__["default"], null)))))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_small_component_Order_Order__WEBPACK_IMPORTED_MODULE_7__["default"], null)))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (MainLayout);
@@ -72314,7 +72360,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var IdxProduct = function IdxProduct(_ref) {
   var data = _ref.data;
-  console.log(data);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "under-product"
   }, data.map(function (item, index) {
@@ -72361,6 +72406,46 @@ var ListFilter = function ListFilter(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ListFilter);
+
+/***/ }),
+
+/***/ "./resources/js/components/small-component/ListFilter/ListFilterPriceType.jsx":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/small-component/ListFilter/ListFilterPriceType.jsx ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+var ListFilterPriceType = function ListFilterPriceType(_ref) {
+  var data = _ref.data;
+  console.log('DATA', data);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "under-fill"
+  }, data.map(function (item, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      style: {
+        maxWidth: '100%'
+      },
+      key: index
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      style: {
+        textAlign: 'left',
+        paddingLeft: '10px'
+      },
+      to: "/product/".concat(item.slug || 'null')
+    }, item.name || 'NULL'));
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ListFilterPriceType);
 
 /***/ }),
 

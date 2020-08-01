@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Brand;
 use App\Category;
+use App\PriceType;
 use App\Post;
 use App\Sim;
 //helper
@@ -292,6 +293,25 @@ class AdminController extends Controller
 
         return redirect('/admin/posts')->with([
             'success' => 'Update success',
+        ]);
+    }
+
+    //price type
+    public function postCreatePriceType(Request $request){
+        if(!$request->name)
+        return redirect()->back()->with(['danger' => 'Something was wrong']);
+
+        $price_type = new PriceType();
+        $price_type->name = $request->name;
+        $price_type->slug = AdminHelper::createSlug($request->name);
+        $request->from ? $price_type->from = $request->from : false;
+        $request->to ? $price_type->to = $request->to : false;
+        $price_type->position = $request->position;
+        $price_type->status = $request->status;
+        $price_type->save();
+
+        return redirect('/admin/price-types')->with([
+            'success' => 'Create success',
         ]);
     }
 }

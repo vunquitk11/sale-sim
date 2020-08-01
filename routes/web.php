@@ -75,5 +75,11 @@ Route::group([
         Route::get('/update-post/{slug}','PageAdminController@pageUpdatePost');
         Route::post('/create-post','AdminController@postCreatePost');
         Route::post('/update-post/{slug}','AdminController@postUpdatePost');
+
+        //price category 
+        Route::get('/create-price-type','PageAdminController@pageCreatePriceType');
+        Route::get('/update-price-type/{slug}','PageAdminController@pageUpdateCreatePriceType');
+
+        Route::post('/create-price-type','AdminController@postCreatePriceType');
     });
 });

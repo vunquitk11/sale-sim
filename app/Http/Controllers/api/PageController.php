@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Sim;
 use App\Category;
 use App\Brand;
+use App\PriceType;
 
 class PageController extends Controller
 {
@@ -33,6 +34,18 @@ class PageController extends Controller
             $brand ? $result['brand_image'] = $brand->image : false;
             $result->setHidden(['brand_id','position']);
         }
+
+        return response()->json([
+            'message' => 'success',
+            'results' => $results,
+        ],200);
+    }
+
+    public function getPriceType(Request $request){
+        $results = PriceType::where('status',1)
+        ->orderBy('position','ASC')
+        ->select('name','slug')
+        ->take(10)->get();
 
         return response()->json([
             'message' => 'success',

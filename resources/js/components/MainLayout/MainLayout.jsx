@@ -1,22 +1,23 @@
 import React, {useState,useEffect,useContext} from 'react';
 import ListFilter from '../small-component/ListFilter/ListFilter';
+import ListFilterPriceType from '../small-component/ListFilter/ListFilterPriceType.jsx';
 import CustomerSupport from '../small-component/CustomerSupport/CustomerSupport';
 import News from '../small-component/News/News';
 import Bank from '../small-component/Bank/Bank';
 import Order from '../small-component/Order/Order';
 import {MainContext} from '../Master'
-const listData = [
-    "Sim dưới 500K",
-    "Sim giá 500K - 1tr",
-    "Sim giá 1tr - 3tr",
-    "Sim giá 3tr - 5tr",
-    "Sim giá 5tr - 10tr",
-    "Sim giá 10tr - 20tr",
-    "Sim giá 20tr - 30tr",
-    "Sim giá 30tr - 50tr",
-    "Sim giá 50tr - 100tr",
-    "Sim trên 100tr",
-]
+// const listData = [
+//     "Sim dưới 500K",
+//     "Sim giá 500K - 1tr",
+//     "Sim giá 1tr - 3tr",
+//     "Sim giá 3tr - 5tr",
+//     "Sim giá 5tr - 10tr",
+//     "Sim giá 10tr - 20tr",
+//     "Sim giá 20tr - 30tr",
+//     "Sim giá 30tr - 50tr",
+//     "Sim giá 50tr - 100tr",
+//     "Sim trên 100tr",
+// ]
 const listData01 = [
     "Sim lục quý",
     "Sim ngũ quý",
@@ -44,6 +45,7 @@ const MainLayout = ({children}) => {
 
     //data
     const [categories,setCategories] = useState([]);
+    const [priceType,setPriceType] = useState([]);
 
     //context
     const {loadData} = useContext(MainContext)
@@ -53,8 +55,14 @@ const MainLayout = ({children}) => {
         setCategories(res.message === 'success' ? res.results : []);
     }
 
+    const loadPriceType = async () => {
+        var res = await loadData('price-type',0);
+        setPriceType(res.message === 'success' ? res.results : []);
+    }
+
     useEffect(() => {
         loadCategories();
+        loadPriceType();
     },[]);
 
     return (
@@ -65,7 +73,7 @@ const MainLayout = ({children}) => {
                     <div className="under-section">
                         <p className="under-title label-sim">Danh mục sim</p>
                         <div className="under-content">
-                            <ListFilter data={categories || []}></ListFilter>
+                            <ListFilter data={categories || []} />
                         </div>
                     </div>
                     {children}
@@ -81,7 +89,7 @@ const MainLayout = ({children}) => {
                     </div>
                     <div className="under-section">
                         <p className="under-title center">Sim theo giá</p>
-                        <ListFilter data={listData}></ListFilter>
+                        <ListFilterPriceType data={priceType || []} />
                     </div>
                     <div className="under-section">
                         <ul className="under-banner">
